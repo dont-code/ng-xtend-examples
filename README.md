@@ -6,9 +6,9 @@ Each example is a separate package containing an Angular application, adding a s
 ## Description
 The table below describes the different examples:
 
-|Example| Description                                                           | Plugin type | Plugin Loading | Typing system |
-|-------|-----------------------------------------------------------------------|---------|--------|---------------|
-|[ng-xtend-example-basic](packages/ng-xtend-example-basic)| Basic example displaying an object in various format in a generic way | Generic | Static | No |
+| Example                | Description                                            | Plugin type | Plugin Loading | Typing system |
+|------------------------|--------------------------------------------------------|---------|--------|---------------|
+| [basic-example](basic) | Displays any object in various format in a generic way | Generic | Static | No |
 
 
 ## Build
