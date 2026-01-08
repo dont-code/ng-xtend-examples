@@ -6,9 +6,14 @@ Each example is a separate package containing an Angular application, adding a s
 ## Description
 The table below describes the different examples:
 
-| Example                | Description                                            | Plugin type | Plugin Loading | Typing system |
-|------------------------|--------------------------------------------------------|---------|--------|---------------|
-| [basic-example](basic) | Displays any object in various format in a generic way | Generic | Static | No |
+| Example                                | Description                                                                                                                                                                   | xt-render tag | Plugin type | Plugin Loading | Type system | Store |
+|----------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------|-------------|----------------|-------------|-------|
+| [basic-example](basic)                 | Displays any object in various format in a generic way                                                                                                                        | Yes                  | Default     | Static         | No          | No    |
+| [typed-example](typed)                 | By describing the type handled, ng-xtend supports more use cases                                                                                                              | Yes                  | Default     | Static         | Yes         | No    |
+| [plugin-example](plugin)               | Show how newly added plugins leverages the type system to embed                                                                                                               | Yes                  | Custom      | Static         | Yes         | No    |
+| [store-example](store)                 | Use xt-store to persist elements managed                                                                                                                                      | Yes                  | Custom      | Static         | Yes         | Yes   |
+| [advanced-type-example](advanced-type) | Showcase support for advanced types and models (like references)                                                                                                              | Yes                  | Default     | Static         | Advanced    | No    |
+| [dynamic-example](Dynamic)             | Loads all plugins dynamically from another website using [Native-Federation](https://github.com/angular-architects/module-federation-plugin/tree/main/libs/native-federation) | Yes                  | Custom      | Dynamic        | Yes    | No    |
 
 
 ## Build
