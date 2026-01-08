@@ -11,9 +11,10 @@ import {XtResolverService} from 'xt-components';
 })
 export class App {
   resolverService = inject(XtResolverService);
-  protected title = 'basic';
+  protected title = 'Ng-Xtend Basic Example';
 
   constructor() {
+      // We initialize the default plugin. Ng-Xtend framework will use it to handle primitives or generic object
     registerDefaultPlugin(this.resolverService);
   }
 }

@@ -3,6 +3,15 @@ import {updateFormGroupWithValue, XtRenderComponent, XtResolverService} from 'xt
 import {FormBuilder, ReactiveFormsModule} from '@angular/forms';
 import {Card} from 'primeng/card';
 
+/**
+ * We just display a static value (elementToDisplay) 3 times:
+ * - As a list
+ * - As a Card
+ * - In an editable form
+ *
+ * You can play around and change the value, you'll see Ng-Xtend will adapt to any value.
+ * As we only have the default plugin registered, the display is quite generic
+ */
 @Component({
   selector: 'app-basic-display',
   imports: [
