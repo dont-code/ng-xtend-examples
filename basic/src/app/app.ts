@@ -1,5 +1,7 @@
-import { Component } from '@angular/core';
+import {Component, inject} from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import {registerDefaultPlugin} from 'xt-plugin-default';
+import {XtResolverService} from 'xt-components';
 
 @Component({
   selector: 'app-root',
@@ -8,5 +10,10 @@ import { RouterOutlet } from '@angular/router';
   styleUrl: './app.css'
 })
 export class App {
+  resolverService = inject(XtResolverService);
   protected title = 'basic';
+
+  constructor() {
+    registerDefaultPlugin(this.resolverService);
+  }
 }

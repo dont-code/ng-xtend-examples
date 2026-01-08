@@ -1,13 +1,16 @@
 {"kind":"O","text":"Invoking: ng build \n"}
 {"kind":"O","text":"❯ Building...\n"}
 {"kind":"O","text":"✔ Building...\n"}
-{"kind":"O","text":"Initial chunk files | Names         |  Raw size | Estimated transfer size\n"}
-{"kind":"O","text":"main-QEEKJCHB.js    | main          | 212.19 kB |                58.02 kB\n"}
-{"kind":"O","text":"styles-5INURTSO.css | styles        |   0 bytes |                 0 bytes\n"}
+{"kind":"O","text":"Initial chunk files | Names         | Raw size | Estimated transfer size\n"}
+{"kind":"O","text":"main-NIPWVHOT.js    | main          |  1.06 MB |               214.78 kB\n"}
+{"kind":"O","text":"styles-5INURTSO.css | styles        |  0 bytes |                 0 bytes\n"}
 {"kind":"O","text":"\n"}
-{"kind":"O","text":"                    | Initial total | 212.19 kB |                58.02 kB\n"}
+{"kind":"O","text":"                    | Initial total |  1.06 MB |               214.78 kB\n"}
 {"kind":"O","text":"\n"}
-{"kind":"O","text":"Application bundle generation complete. [6.207 seconds] - 2026-01-08T08:12:55.921Z\n"}
+{"kind":"O","text":"Application bundle generation complete. [11.816 seconds] - 2026-01-08T14:59:03.418Z\n"}
 {"kind":"O","text":"\n"}
+{"kind":"E","text":"\u001b[33m▲ \u001b[43;33m[\u001b[43;30mWARNING\u001b[43;33m]\u001b[0m \u001b[1mbundle initial exceeded maximum budget. Budget 1.00 MB was not met by 60.74 kB with a total of 1.06 MB.\u001b[0m\n"}
+{"kind":"E","text":"\n"}
+{"kind":"E","text":"\n"}
 {"kind":"O","text":"Output location: /home/gc-garunda/devs/dont-code/github/ng-xtend-examples/basic/dist/basic\n"}
 {"kind":"O","text":"\n"}
