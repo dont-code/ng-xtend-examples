@@ -1,0 +1,13 @@
+{"kind":"O","text":"Invoking: ng build \n"}
+{"kind":"O","text":"❯ Building...\n"}
+{"kind":"O","text":"✔ Building...\n"}
+{"kind":"O","text":"Initial chunk files | Names         |  Raw size | Estimated transfer size\n"}
+{"kind":"O","text":"main-QEEKJCHB.js    | main          | 212.19 kB |                58.02 kB\n"}
+{"kind":"O","text":"styles-5INURTSO.css | styles        |   0 bytes |                 0 bytes\n"}
+{"kind":"O","text":"\n"}
+{"kind":"O","text":"                    | Initial total | 212.19 kB |                58.02 kB\n"}
+{"kind":"O","text":"\n"}
+{"kind":"O","text":"Application bundle generation complete. [6.207 seconds] - 2026-01-08T08:12:55.921Z\n"}
+{"kind":"O","text":"\n"}
+{"kind":"O","text":"Output location: /home/gc-garunda/devs/dont-code/github/ng-xtend-examples/basic/dist/basic\n"}
+{"kind":"O","text":"\n"}
