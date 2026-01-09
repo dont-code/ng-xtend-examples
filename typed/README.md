@@ -1,30 +1,21 @@
-# Typed
+# ![ng-xtend logo](public/logo.png) Typed Example
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.0.5.
+Shows how to use leverage the type system of ng-xtend to better support creating, editing and displaying objects.
+
+## What's included
+Same as the [basic example](../basic), with the addition of:
+- The object type is described (see registerType in `src/app.ts` and valueType in `src/typed-display/typed-display.html`)
+- New, empty objects conformed to their type can be created (see `src/typed-display/typed-display.component.html`)
 
 ## Development server
 
 To start a local development server, run:
 
 ```bash
-ng serve
+ng serve typed
 ```
 
 Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
-
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
 
 ## Building
 
@@ -43,17 +34,3 @@ To execute unit tests with the [Karma](https://karma-runner.github.io) test runn
 ```bash
 ng test
 ```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.

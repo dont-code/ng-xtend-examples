@@ -1,0 +1,18 @@
+<h2>Create a new Book</h2>
+<div style="display: flex;justify-content: center; align-items: center;">
+  <div>
+    <p-card [style]="{width: '50em'}">
+      <form [formGroup]="bookForm">
+        <xt-render displayMode="FULL_EDITABLE" valueType="bookType" [formGroup]="bookForm"> </xt-render>
+      </form>
+      <ng-template #footer>
+        <div style="display:flex; justify-content: space-evenly;">
+          <p-button label="Create" (onClick)="createBook()" [disabled]="!bookForm.valid || bookForm.pristine" />
+          <p-button label="Reset" severity="secondary" [outlined]="true" (onClick)="cancelBook()" />
+        </div>
+      </ng-template>    </p-card>
+  </div>
+</div>
+
+<h2>My Books</h2>
+<xt-render displayMode="LIST_VIEW" valueType="bookType" [value]="elementsToDisplay()"> </xt-render>
