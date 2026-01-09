@@ -437,6 +437,18 @@
       //    */
       "projectFolder": "typed",
       "shouldPublish": false
+    },
+    {
+      //   /**
+      //    * The NPM package name of the project (must match package.json)
+      //    */
+      "packageName": "ng-xtend-plugin-example",
+      //
+      //   /**
+      //    * The path to the project folder, relative to the rush.json config file.
+      //    */
+      "projectFolder": "plugin",
+      "shouldPublish": false
     }
     //
     // {
