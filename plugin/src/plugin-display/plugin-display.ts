@@ -14,7 +14,7 @@ import {Button} from 'primeng/button';
  * As we only have the default plugin registered, the display is quite generic
  */
 @Component({
-  selector: 'app-typed-display',
+  selector: 'app-plugin-display',
   imports: [
     XtRenderComponent,
     ReactiveFormsModule,

@@ -1,6 +1,8 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { InOutDisplay } from './in-out-display';
+import {provideZonelessChangeDetection} from '@angular/core';
+import {provideAnimations} from '@angular/platform-browser/animations';
+import {InOutDisplay} from './in-out-display';
 
 describe('InOutDisplay', () => {
   let component: InOutDisplay;
@@ -8,9 +10,10 @@ describe('InOutDisplay', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [InOutDisplay]
+      imports: [InOutDisplay],
+      providers: [provideZonelessChangeDetection(), provideAnimations()]
     })
-    .compileComponents();
+      .compileComponents();
 
     fixture = TestBed.createComponent(InOutDisplay);
     component = fixture.componentInstance;
