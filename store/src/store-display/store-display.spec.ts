@@ -1,6 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { StoreDisplay } from './store-display';
+import {provideZonelessChangeDetection} from '@angular/core';
+import {provideAnimations} from '@angular/platform-browser/animations';
 
 describe('StoreDisplay', () => {
   let component: StoreDisplay;
@@ -8,7 +10,8 @@ describe('StoreDisplay', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [StoreDisplay]
+      imports: [StoreDisplay],
+      providers: [provideZonelessChangeDetection(), provideAnimations()]
     })
     .compileComponents();
 

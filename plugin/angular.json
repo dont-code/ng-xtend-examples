@@ -53,7 +53,7 @@
           "builder": "@angular/build:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "typed:build:production"
+              "buildTarget": "plugin:build:production"
             },
             "development": {
               "buildTarget": "plugin:build:development"

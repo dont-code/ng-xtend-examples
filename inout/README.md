@@ -5,7 +5,7 @@ It listens to the selected element in the list component, and push the selection
 
 ## What's included
 Same as the [plugin example](../plugin), with the addition of:
-- A function that registers out events of whatver component is displaying the list (see `src/inout/inout.component.ts`)
+- We listen to selection events of whatver component is displaying the list (see outputChanged in `src/inout/inout.component.ts`)
 
 ## Development server
 
