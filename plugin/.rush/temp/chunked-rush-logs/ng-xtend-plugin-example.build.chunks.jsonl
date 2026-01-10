@@ -1,0 +1,22 @@
+{"kind":"O","text":"Invoking: ng build \n"}
+{"kind":"O","text":"❯ Building...\n"}
+{"kind":"O","text":"✔ Building...\n"}
+{"kind":"O","text":"Initial chunk files | Names         | Raw size | Estimated transfer size\n"}
+{"kind":"O","text":"main-C7KZILOO.js    | main          |  1.26 MB |               241.63 kB\n"}
+{"kind":"O","text":"styles-MYJFEBJ4.css | styles        | 13.20 kB |                 2.38 kB\n"}
+{"kind":"O","text":"\n"}
+{"kind":"O","text":"                    | Initial total |  1.27 MB |               244.01 kB\n"}
+{"kind":"O","text":"\n"}
+{"kind":"O","text":"Application bundle generation complete. [26.594 seconds] - 2026-01-10T09:21:23.301Z\n"}
+{"kind":"O","text":"\n"}
+{"kind":"E","text":"\u001b[33m▲ \u001b[43;33m[\u001b[43;30mWARNING\u001b[43;33m]\u001b[0m \u001b[1mbundle initial exceeded maximum budget. Budget 1.00 MB was not met by 270.20 kB with a total of 1.27 MB.\u001b[0m\n"}
+{"kind":"E","text":"\n"}
+{"kind":"E","text":"\n"}
+{"kind":"E","text":"\u001b[33m▲ \u001b[43;33m[\u001b[43;30mWARNING\u001b[43;33m]\u001b[0m \u001b[1mModule 'countries-ts' used by '../common/temp/node_modules/.pnpm/xt-plugin-intl@0.6.1_ba091c317f24d2b418bc3ec596b20122/node_modules/xt-plugin-intl/fesm2022/xt-plugin-intl.mjs' is not ESM\u001b[0m\n"}
+{"kind":"E","text":"\n"}
+{"kind":"E","text":"  CommonJS or AMD dependencies can cause optimization bailouts.\n"}
+{"kind":"E","text":"  For more information see: \u001b[4mhttps://angular.dev/tools/cli/build#configuring-commonjs-dependencies\u001b[0m\n"}
+{"kind":"E","text":"\n"}
+{"kind":"E","text":"\n"}
+{"kind":"O","text":"Output location: /home/gc-garunda/devs/dont-code/github/ng-xtend-examples/plugin/dist/plugin\n"}
+{"kind":"O","text":"\n"}
