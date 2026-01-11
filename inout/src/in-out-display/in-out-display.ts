@@ -35,8 +35,8 @@ export class InOutDisplay implements OnInit{
 
   formBuilder = inject(FormBuilder);
 
-  bookForm= this.formBuilder.group({
-  });
+  bookForm= signal (this.formBuilder.group({
+  }));
 
   ngOnInit(): void {
     this.updateBookForm();
@@ -62,7 +62,7 @@ export class InOutDisplay implements OnInit{
   }
 
   protected cancelBook() {
-    this.bookForm.reset();
+    this.bookForm().reset();
   }
 
   protected createBook() {
@@ -74,14 +74,14 @@ export class InOutDisplay implements OnInit{
   }
 
   protected saveBook() {
-    this.selectedEntity.set(this.bookForm.value);
+    this.selectedEntity.set(this.bookForm().value);
     if (this.selectedEntityIndex==-1){
-      this.elementsToDisplay.update (elements => elements.concat(this.bookForm.value));
+      this.elementsToDisplay.update (elements => elements.concat(this.bookForm().value));
       this.selectedEntityIndex=this.elementsToDisplay().length-1;
     }
     else {
       this.elementsToDisplay.update (elements => {
-        elements[this.selectedEntityIndex]=this.bookForm.value;
+        elements[this.selectedEntityIndex]=this.bookForm().value;
         return [...elements];
       });
 
@@ -89,6 +89,8 @@ export class InOutDisplay implements OnInit{
   }
 
   protected updateBookForm() {
-    updateFormGroupWithValue(this.bookForm, this.selectedEntity()??{}, 'bookType', this.resolver.typeResolver );
+    const newForm=this.formBuilder.group({});
+    updateFormGroupWithValue(newForm, this.selectedEntity()??{}, 'bookType', this.resolver.typeResolver );
+    this.bookForm.set(newForm);
   }
 }
