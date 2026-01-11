@@ -2,14 +2,14 @@
 {"kind":"O","text":"❯ Building...\n"}
 {"kind":"O","text":"✔ Building...\n"}
 {"kind":"O","text":"Initial chunk files | Names         | Raw size | Estimated transfer size\n"}
-{"kind":"O","text":"main-GPTTWUOQ.js    | main          |  1.18 MB |               227.78 kB\n"}
+{"kind":"O","text":"main-LTFFBGX5.js    | main          |  1.18 MB |               227.69 kB\n"}
 {"kind":"O","text":"styles-MYJFEBJ4.css | styles        | 13.20 kB |                 2.38 kB\n"}
 {"kind":"O","text":"\n"}
-{"kind":"O","text":"                    | Initial total |  1.19 MB |               230.16 kB\n"}
+{"kind":"O","text":"                    | Initial total |  1.19 MB |               230.07 kB\n"}
 {"kind":"O","text":"\n"}
-{"kind":"O","text":"Application bundle generation complete. [26.218 seconds] - 2026-01-10T09:21:22.904Z\n"}
+{"kind":"O","text":"Application bundle generation complete. [20.724 seconds] - 2026-01-11T16:20:46.107Z\n"}
 {"kind":"O","text":"\n"}
-{"kind":"E","text":"\u001b[33m▲ \u001b[43;33m[\u001b[43;30mWARNING\u001b[43;33m]\u001b[0m \u001b[1mbundle initial exceeded maximum budget. Budget 1.00 MB was not met by 189.57 kB with a total of 1.19 MB.\u001b[0m\n"}
+{"kind":"E","text":"\u001b[33m▲ \u001b[43;33m[\u001b[43;30mWARNING\u001b[43;33m]\u001b[0m \u001b[1mbundle initial exceeded maximum budget. Budget 1.00 MB was not met by 189.61 kB with a total of 1.19 MB.\u001b[0m\n"}
 {"kind":"E","text":"\n"}
 {"kind":"E","text":"\n"}
 {"kind":"O","text":"Output location: /home/gc-garunda/devs/dont-code/github/ng-xtend-examples/typed/dist/typed\n"}

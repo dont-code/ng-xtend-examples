@@ -1,8 +1,16 @@
-import {Component, inject, OnInit, signal} from '@angular/core';
-import {updateFormGroupWithValue, XtComponentOutput, XtRenderComponent, XtResolverService} from 'xt-components';
+import {Component, computed, inject, OnInit, signal} from '@angular/core';
+import {
+  updateFormGroupWithValue,
+  XtComponentOutput,
+  XtMessageHandler,
+  XtRenderComponent,
+  XtResolverService
+} from 'xt-components';
 import {FormBuilder, ReactiveFormsModule} from '@angular/forms';
 import {Card} from 'primeng/card';
 import {Button} from 'primeng/button';
+import {XtSignalStore, XtStoreManagerService} from 'xt-store';
+import {ManagedData} from 'xt-type';
 
 /**
  * We just display a static value (elementToDisplay) 3 times:
@@ -27,18 +35,35 @@ import {Button} from 'primeng/button';
 export class StoreDisplay implements OnInit{
 
   resolver = inject(XtResolverService);
-  elementsToDisplay = signal<any[]>([]);
 
   selectedEntity = signal<any>(null);
 
-  selectedEntityIndex = -1;
+  selectedEntityID:string|null = null;
 
   formBuilder = inject(FormBuilder);
 
-  bookForm= this.formBuilder.group({
-  });
+  bookForm= signal (this.formBuilder.group({
+  }));
+
+  // We use the ErrorHandlerService to display errors
+  protected readonly errorHandler = inject(XtMessageHandler);
+
+  // We use a XtSignalStore to manage the loading / storing of elements through the API
+  storeMgr = inject(XtStoreManagerService);
+  store : XtSignalStore<ManagedData> | null = null;
+
+  // Elements to display are now directly computed from the store
+  elementsToDisplay = computed(() => this.store?.entities() ?? [])
 
   ngOnInit(): void {
+      // We fist load the data from the Store
+    this.store = this.storeMgr.getStoreFor("Example Book");
+    this.store.fetchEntities().catch((error) => {
+      this.errorHandler.errorOccurred(error, "Error loading Example Books ");
+    }).finally(() => {
+      console.log('Loading done.');
+    });
+
     this.updateBookForm();
   }
 
@@ -54,41 +79,50 @@ export class StoreDisplay implements OnInit{
         this.selectedEntity.set(selected);
         this.updateBookForm();
         if (selected!=null)
-          this.selectedEntityIndex=this.elementsToDisplay().indexOf(selected);
+          this.selectedEntityID=selected._id;
         else
-          this.selectedEntityIndex=-1;
+          this.selectedEntityID=null;
       });
     }
   }
 
   protected cancelBook() {
-    this.bookForm.reset();
+    this.bookForm().reset();
   }
 
   protected createBook() {
     const newBook={};
     //this.elementsToDisplay.update (elements => elements.concat(newBook));
     this.selectedEntity.set(newBook);
-    this.selectedEntityIndex=-1;
+    this.selectedEntityID=null;
     this.updateBookForm();
   }
 
   protected saveBook() {
-    this.selectedEntity.set(this.bookForm.value);
-    if (this.selectedEntityIndex==-1){
-      this.elementsToDisplay.update (elements => elements.concat(this.bookForm.value));
-      this.selectedEntityIndex=this.elementsToDisplay().length-1;
-    }
-    else {
-      this.elementsToDisplay.update (elements => {
-        elements[this.selectedEntityIndex]=this.bookForm.value;
-        return [...elements];
-      });
-
-    }
+    this.selectedEntity.set(this.bookForm().value);
+     // We now create or save through the APIs
+    this.store?.storeEntity(this.bookForm().value).then((saved) => {
+      if (saved?._id!=null) {
+        this.selectedEntityID=saved._id;
+      }else {
+        this.selectedEntityID=null;
+      }
+    }).catch((error) => {
+      this.errorHandler.errorOccurred(error, "Error saving Example Book ");
+    });
   }
 
   protected updateBookForm() {
-    updateFormGroupWithValue(this.bookForm, this.selectedEntity()??{}, 'bookType', this.resolver.typeResolver );
+    const newForm=this.formBuilder.group({});
+    updateFormGroupWithValue(newForm, this.selectedEntity()??{}, 'Example Book', this.resolver.typeResolver );
+    this.bookForm.set(newForm);
+  }
+
+  protected reloadBooks() {
+    this.store?.fetchEntities().then (() => {
+      console.log('Reload done.');
+    }).catch ((error) => {
+      this.errorHandler.errorOccurred(error, "Error loading Example Books ");
+    })
   }
 }
