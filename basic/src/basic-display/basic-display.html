@@ -14,11 +14,11 @@
 <h2>Editing a Book</h2>
 <div style="display: flex;justify-content: center; align-items: center;">
   <div>
-    <p-card [style]="{width: '50em'}">
-      <form [formGroup]="bookForm">
+    <form [formGroup]="bookForm">
+      <p-card [style]="{width: '50em'}">
         <xt-render displayMode="FULL_EDITABLE" [formGroup]="bookForm"> </xt-render>
-      </form>
-    </p-card>
+      </p-card>
+    </form>
   </div>
 </div>
 

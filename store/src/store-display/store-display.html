@@ -6,16 +6,17 @@
 <p-button label="Create" (onClick)="createBook()" />
 <div style="display: flex;justify-content: center; align-items: center;">
   <div>
-    <p-card [style]="{width: '50em'}">
-      <form [formGroup]="bookForm()">
+    <form [formGroup]="bookForm()" (ngSubmit)="saveBook()">
+      <p-card [style]="{width: '50em'}">
         <xt-render displayMode="FULL_EDITABLE" valueType="Example Book" [formGroup]="bookForm()"> </xt-render>
-      </form>
-      <ng-template #footer>
-        <div style="display:flex; justify-content: space-evenly;">
-          <p-button label="Save" (onClick)="saveBook()" [disabled]="!bookForm().valid || bookForm().pristine" />
-          <p-button label="Reset" severity="secondary" [outlined]="true" (onClick)="cancelBook()" />
-        </div>
-      </ng-template>    </p-card>
+        <ng-template #footer>
+          <div style="display:flex; justify-content: space-evenly;">
+            <p-button label="Save" type="submit" [disabled]="!bookForm().valid || bookForm().pristine" />
+            <p-button label="Reset" severity="secondary" [outlined]="true" (onClick)="cancelBook()" />
+          </div>
+        </ng-template>
+      </p-card>
+    </form>
   </div>
 </div>
 
