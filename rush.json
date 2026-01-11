@@ -473,6 +473,18 @@
       //    */
       "projectFolder": "store",
       "shouldPublish": false
+    },
+    {
+      //   /**
+      //    * The NPM package name of the project (must match package.json)
+      //    */
+      "packageName": "ng-xtend-advanced-type-example",
+      //
+      //   /**
+      //    * The path to the project folder, relative to the rush.json config file.
+      //    */
+      "projectFolder": "advanced-type",
+      "shouldPublish": false
     }
     //
     // {
