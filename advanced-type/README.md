@@ -5,7 +5,9 @@ Show how ng-xtend framework supports complex types, like many-to-one, one-to-man
 ## What's included
 Same as the [store example](../store), with the addition of:
 - The authors are now linked to books with a many to one relation (see `src/app/app.ts`)
-- You can edit both the author list and select one for each book (see `src/advanced-type-display/advanced-type-display.ts`)
+- We create two signal Store, one to manage the authors and one to manage the books (see `src/advanced-type-display/advanced-type-display.ts`)
+- To ease the development, we create the typescript types for book and authors ( see `src/model/types.ts`)
+- You can edit both the author list and select one for each book (see `src/advanced-type-display/advanced-type-display.html`)
 
 ## Development server
 

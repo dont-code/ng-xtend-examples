@@ -1,6 +1,30 @@
+<h2>My Authors</h2>
+<p-button label="Reload Authors" (onClick)="reloadAuthors()" />
+<xt-render displayMode="LIST_VIEW" valueType="Example Author" [value]="authorsToDisplay()" (outputs)="authorOutputChanged($event)"> </xt-render>
+
+<h2>Edit an Author</h2>
+<p-button label="Create a new Author" (onClick)="createAuthor()" />
+<div style="display: flex;justify-content: center; align-items: center;">
+  <div>
+    <form [formGroup]="authorForm()" (ngSubmit)="saveAuthor()">
+      <p-card [style]="{width: '50em'}">
+        <xt-render displayMode="FULL_EDITABLE" valueType="Example Author" [formGroup]="authorForm()"> </xt-render>
+        <ng-template #footer>
+          <div style="display:flex; justify-content: space-evenly;">
+            <p-button label="Save" type="submit" [disabled]="!authorForm().valid || authorForm().pristine" />
+            <p-button label="Reset" severity="secondary" [outlined]="true" (onClick)="cancelAuthor()" />
+          </div>
+        </ng-template>
+      </p-card>
+    </form>
+  </div>
+</div>
+
+
+
 <h2>My Books</h2>
 <p-button label="Reload" (onClick)="reloadBooks()" />
-<xt-render displayMode="LIST_VIEW" valueType="Example Book" [value]="elementsToDisplay()" (outputs)="outputChanged($event)"> </xt-render>
+<xt-render displayMode="LIST_VIEW" valueType="Example Book" [value]="booksToDisplay()" (outputs)="bookOutputChanged($event)"> </xt-render>
 
 <h2>Edit a Book</h2>
 <p-button label="Create" (onClick)="createBook()" />

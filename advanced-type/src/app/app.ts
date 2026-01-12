@@ -28,21 +28,38 @@ export class App {
     registerInternationalPlugin(this.resolverService);
     registerFinancePlugin(this.resolverService);
 
-     // We declare the types handled by the framework
+     // We reference the author type from the book type with a many-to-one relationship
     this.resolverService.registerTypes({
       buyType: {
         on: 'date',
         at: 'string',
         price: 'money-amount'
       },
+      'Example Author': {
+        displayTemplate: '<%=it.name%> (<%=it.born%>)',
+        children:{
+          name: 'string',
+          born: 'date',
+          nationality: 'country',
+        }
+      },
       'Example Book': {
-        bookName: 'string',
-        author: 'string',
-        nationality: 'country',
-        bought: 'buyType',
-        read: 'boolean'
+        children: {
+          bookName: 'string',
+          author: {
+            toType: 'Example Author',
+            field: 'name',
+            referenceType:'MANY-TO-ONE'
+          },
+          nationality: 'country',
+          bought: 'buyType',
+          read: 'boolean'
+        }
       }
     });
+
+      // Ensure the references are resolved
+    this.resolverService.resolvePendingReferences();
 
     // We define the dont-code API as the storage unit for our elements
     this.apiProvider.apiUrl = 'https://test.dont-code.net/demo/data';

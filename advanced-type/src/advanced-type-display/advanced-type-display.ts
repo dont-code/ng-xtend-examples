@@ -10,7 +10,7 @@ import {FormBuilder, ReactiveFormsModule} from '@angular/forms';
 import {Card} from 'primeng/card';
 import {Button} from 'primeng/button';
 import {XtSignalStore, XtStoreManagerService} from 'xt-store';
-import {ManagedData} from 'xt-type';
+import {Author, Book} from '../model/types';
 
 /**
  * We just display a static value (elementToDisplay) 3 times:
@@ -32,17 +32,22 @@ import {ManagedData} from 'xt-type';
   templateUrl: './advanced-type-display.html',
   styleUrl: './advanced-type-display.css',
 })
-export class StoreDisplay implements OnInit{
+export class AdvancedTypeDisplay implements OnInit{
 
   resolver = inject(XtResolverService);
 
-  selectedEntity = signal<any>(null);
+  selectedBook = signal<Book|null>(null);
+  selectedBookID:string|null = null;
 
-  selectedEntityID:string|null = null;
+  selectedAuthor = signal<Author|null>(null);
+  selectedAuthorID:string|null = null;
 
   formBuilder = inject(FormBuilder);
 
   bookForm= signal (this.formBuilder.group({
+  }));
+
+  authorForm= signal (this.formBuilder.group({
   }));
 
   // We use the ErrorHandlerService to display errors
@@ -50,20 +55,26 @@ export class StoreDisplay implements OnInit{
 
   // We use a XtSignalStore to manage the loading / storing of elements through the API
   storeMgr = inject(XtStoreManagerService);
-  store : XtSignalStore<ManagedData> | null = null;
+  bookStore : XtSignalStore<Book> | null = null;
+  authorStore : XtSignalStore<Author> | null = null;
 
   // Elements to display are now directly computed from the store
-  elementsToDisplay = computed(() => this.store?.entities() ?? [])
+  booksToDisplay = computed(() => this.bookStore?.entities() ?? [])
+  authorsToDisplay = computed(() => this.authorStore?.entities() ?? [])
 
   ngOnInit(): void {
-    // We fist load the data from the Store
-    this.store = this.storeMgr.getStoreFor("Example Book");
-    this.store.fetchEntities().catch((error) => {
-      this.errorHandler.errorOccurred(error, "Error loading Example Books ");
+    // We read the authors and books from the stores
+    this.authorStore = this.storeMgr.getStoreFor("Example Author");
+    this.authorStore.fetchEntities().then( ()=> {
+      this.bookStore = this.storeMgr.getStoreFor("Example Book");
+      return this.bookStore.fetchEntities();
+    }).catch((error) => {
+      this.errorHandler.errorOccurred(error, "Error loading Example Data from the APIs ");
     }).finally(() => {
       console.log('Loading done.');
     });
 
+    this.updateAuthorForm();
     this.updateBookForm();
   }
 
@@ -72,16 +83,35 @@ export class StoreDisplay implements OnInit{
    * One of it, valueSelected, contains the currently selected entity.
    * @param newValue
    */
-  outputChanged(newValue: XtComponentOutput | null) {
+  bookOutputChanged(newValue: XtComponentOutput | null) {
     if (newValue?.valueSelected!=null) {
       // We listen to any change in the selection
       newValue?.valueSelected.subscribe (selected => {
-        this.selectedEntity.set(selected);
+        this.selectedBook.set(selected);
         this.updateBookForm();
         if (selected!=null)
-          this.selectedEntityID=selected._id;
+          this.selectedBookID=selected._id;
         else
-          this.selectedEntityID=null;
+          this.selectedBookID=null;
+      });
+    }
+  }
+
+  /**
+   * Called whenever the list component has some outputs.
+   * One of it, valueSelected, contains the currently selected entity.
+   * @param newValue
+   */
+  authorOutputChanged(newValue: XtComponentOutput | null) {
+    if (newValue?.valueSelected!=null) {
+      // We listen to any change in the selection
+      newValue?.valueSelected.subscribe (selected => {
+        this.selectedAuthor.set(selected);
+        this.updateAuthorForm();
+        if (selected!=null)
+          this.selectedAuthorID=selected._id;
+        else
+          this.selectedAuthorID=null;
       });
     }
   }
@@ -90,22 +120,26 @@ export class StoreDisplay implements OnInit{
     this.bookForm().reset();
   }
 
+  protected cancelAuthor() {
+    this.authorForm().reset();
+  }
+
   protected createBook() {
-    const newBook={};
+    const newBook={} as Book;
     //this.elementsToDisplay.update (elements => elements.concat(newBook));
-    this.selectedEntity.set(newBook);
-    this.selectedEntityID=null;
+    this.selectedBook.set(newBook);
+    this.selectedBookID=null;
     this.updateBookForm();
   }
 
   protected saveBook() {
-    this.selectedEntity.set(this.bookForm().value);
+    this.selectedBook.set(this.bookForm().value as Book);
     // We now create or save through the APIs
-    this.store?.storeEntity(this.bookForm().value).then((saved) => {
+    this.bookStore?.storeEntity(this.bookForm().value as Book).then((saved) => {
       if (saved?._id!=null) {
-        this.selectedEntityID=saved._id;
+        this.selectedBookID=saved._id;
       }else {
-        this.selectedEntityID=null;
+        this.selectedBookID=null;
       }
     }).catch((error) => {
       this.errorHandler.errorOccurred(error, "Error saving Example Book ");
@@ -114,15 +148,51 @@ export class StoreDisplay implements OnInit{
 
   protected updateBookForm() {
     const newForm=this.formBuilder.group({});
-    updateFormGroupWithValue(newForm, this.selectedEntity()??{}, 'Example Book', this.resolver.typeResolver );
+    updateFormGroupWithValue(newForm, this.selectedBook()??{}, 'Example Book', this.resolver.typeResolver );
     this.bookForm.set(newForm);
   }
 
+  protected createAuthor() {
+    const newAuthor={} as Author;
+    //this.elementsToDisplay.update (elements => elements.concat(newBook));
+    this.selectedAuthor.set(newAuthor);
+    this.selectedAuthorID=null;
+    this.updateAuthorForm();
+  }
+
+  protected saveAuthor() {
+    this.selectedAuthor.set(this.authorForm().value as Author);
+    // We now create or save through the APIs
+    this.authorStore?.storeEntity(this.authorForm().value as Author).then((saved) => {
+      if (saved?._id!=null) {
+        this.selectedAuthorID=saved._id;
+      }else {
+        this.selectedAuthorID=null;
+      }
+    }).catch((error) => {
+      this.errorHandler.errorOccurred(error, "Error saving Example Author.");
+    });
+  }
+
+  protected updateAuthorForm() {
+    const newForm=this.formBuilder.group({});
+    updateFormGroupWithValue(newForm, this.selectedAuthor()??{}, 'Example Author', this.resolver.typeResolver );
+    this.authorForm.set(newForm);
+  }
+
   protected reloadBooks() {
-    this.store?.fetchEntities().then (() => {
-      console.log('Reload done.');
+    this.bookStore?.fetchEntities().then (() => {
+      console.log('Reload Books done.');
     }).catch ((error) => {
-      this.errorHandler.errorOccurred(error, "Error loading Example Books ");
+      this.errorHandler.errorOccurred(error, "Error loading Example Books.");
+    })
+  }
+
+  protected reloadAuthors() {
+    this.authorStore?.fetchEntities().then (() => {
+      console.log('Reload Authors done.');
+    }).catch ((error) => {
+      this.errorHandler.errorOccurred(error, "Error loading Example Authors.");
     })
   }
 }
