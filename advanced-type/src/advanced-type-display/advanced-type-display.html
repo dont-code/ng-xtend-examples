@@ -1,6 +1,6 @@
 <h2>My Authors</h2>
 <p-button label="Reload Authors" (onClick)="reloadAuthors()" />
-<xt-render displayMode="LIST_VIEW" valueType="Example Author" [value]="authorsToDisplay()" (outputs)="authorOutputChanged($event)"> </xt-render>
+<xt-render displayMode="LIST_VIEW" valueType="Example Author" [value]="authorStore?.entities()" (outputs)="authorOutputChanged($event)"> </xt-render>
 
 <h2>Edit an Author</h2>
 <p-button label="Create a new Author" (onClick)="createAuthor()" />
@@ -24,7 +24,7 @@
 
 <h2>My Books</h2>
 <p-button label="Reload" (onClick)="reloadBooks()" />
-<xt-render displayMode="LIST_VIEW" valueType="Example Book" [value]="booksToDisplay()" (outputs)="bookOutputChanged($event)"> </xt-render>
+<xt-render displayMode="LIST_VIEW" valueType="Example Book" [value]="bookStore?.entities()" (outputs)="bookOutputChanged($event)"> </xt-render>
 
 <h2>Edit a Book</h2>
 <p-button label="Create" (onClick)="createBook()" />

@@ -1,4 +1,4 @@
-import {Component, computed, inject, OnInit, signal} from '@angular/core';
+import {AfterViewInit, Component, inject, OnInit, signal} from '@angular/core';
 import {
   updateFormGroupWithValue,
   XtComponentOutput,
@@ -32,7 +32,7 @@ import {Author, Book} from '../model/types';
   templateUrl: './advanced-type-display.html',
   styleUrl: './advanced-type-display.css',
 })
-export class AdvancedTypeDisplay implements OnInit{
+export class AdvancedTypeDisplay implements OnInit, AfterViewInit{
 
   resolver = inject(XtResolverService);
 
@@ -58,24 +58,27 @@ export class AdvancedTypeDisplay implements OnInit{
   bookStore : XtSignalStore<Book> | null = null;
   authorStore : XtSignalStore<Author> | null = null;
 
-  // Elements to display are now directly computed from the store
-  booksToDisplay = computed(() => this.bookStore?.entities() ?? [])
-  authorsToDisplay = computed(() => this.authorStore?.entities() ?? [])
-
   ngOnInit(): void {
-    // We read the authors and books from the stores
     this.authorStore = this.storeMgr.getStoreFor("Example Author");
-    this.authorStore.fetchEntities().then( ()=> {
-      this.bookStore = this.storeMgr.getStoreFor("Example Book");
-      return this.bookStore.fetchEntities();
-    }).catch((error) => {
-      this.errorHandler.errorOccurred(error, "Error loading Example Data from the APIs ");
-    }).finally(() => {
-      console.log('Loading done.');
-    });
-
+    this.bookStore = this.storeMgr.getStoreFor("Example Book");
     this.updateAuthorForm();
     this.updateBookForm();
+  }
+
+  ngAfterViewInit(): void {
+    this.initStores();
+  }
+
+  async initStores () : Promise<void> {
+    try {
+      // We read the authors and books from the stores
+      await this.authorStore?.fetchEntities();
+      await this.bookStore?.fetchEntities();
+
+    } catch(error) {
+      this.errorHandler.errorOccurred(error, "Error loading Example Data from the APIs ");
+      console.log('Loading done.');
+    }
   }
 
   /**
