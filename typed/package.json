@@ -34,9 +34,9 @@
     "@primeuix/themes": "^2.0.0",
     "primeicons": "^7.0.0",
     "@angular-architects/native-federation": "^20.0.0",
-    "xt-components": "^0.6.2",
-    "xt-type": "^0.10.2",
-    "xt-plugin-default": "^0.6.2"
+    "xt-components": "^0.6.4",
+    "xt-type": "^0.10.4",
+    "xt-plugin-default": "^0.6.4"
   },
   "devDependencies": {
     "@angular/build": "^20.0.5",

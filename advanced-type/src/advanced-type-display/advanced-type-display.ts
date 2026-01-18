@@ -59,8 +59,8 @@ export class AdvancedTypeDisplay implements OnInit, AfterViewInit{
   authorStore : XtSignalStore<Author> | null = null;
 
   ngOnInit(): void {
-    this.authorStore = this.storeMgr.getStoreFor("Example Author");
-    this.bookStore = this.storeMgr.getStoreFor("Example Book");
+    this.authorStore = this.storeMgr.getStoreFor("Example Author", this.resolver.typeResolver);
+    this.bookStore = this.storeMgr.getStoreFor("Example Book", this.resolver.typeResolver);
     this.updateAuthorForm();
     this.updateBookForm();
   }

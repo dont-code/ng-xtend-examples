@@ -1,46 +1,54 @@
-<h2>My Authors</h2>
-<p-button label="Reload Authors" (onClick)="reloadAuthors()" />
-<xt-render displayMode="LIST_VIEW" valueType="Example Author" [value]="authorStore?.entities()" (outputs)="authorOutputChanged($event)"> </xt-render>
-
-<h2>Edit an Author</h2>
-<p-button label="Create a new Author" (onClick)="createAuthor()" />
-<div style="display: flex;justify-content: center; align-items: center;">
-  <div>
-    <form [formGroup]="authorForm()" (ngSubmit)="saveAuthor()">
-      <p-card [style]="{width: '50em'}">
-        <xt-render displayMode="FULL_EDITABLE" valueType="Example Author" [formGroup]="authorForm()"> </xt-render>
-        <ng-template #footer>
-          <div style="display:flex; justify-content: space-evenly;">
-            <p-button label="Save" type="submit" [disabled]="!authorForm().valid || authorForm().pristine" />
-            <p-button label="Reset" severity="secondary" [outlined]="true" (onClick)="cancelAuthor()" />
-          </div>
-        </ng-template>
-      </p-card>
-    </form>
+<div class="author-container">
+  <div class="author-title"><h2>My Authors</h2><p-button label="Reload Authors" (onClick)="reloadAuthors()" /></div>
+  <div class="author-list">
+    <xt-render displayMode="LIST_VIEW" valueType="Example Author" [value]="authorStore?.entities()" (outputs)="authorOutputChanged($event)"> </xt-render>
+  </div>
+  <div class="author-edit-title">
+    <h2>Edit an Author</h2>
+    <p-button label="Create a new Author" (onClick)="createAuthor()" />
+  </div>
+  <div class="author-edit">
+    <div style="display: flex;justify-content: center; align-items: center;">
+      <div>
+        <form [formGroup]="authorForm()" (ngSubmit)="saveAuthor()">
+          <p-card [style]="{width: '50em'}">
+            <xt-render displayMode="FULL_EDITABLE" valueType="Example Author" [formGroup]="authorForm()"> </xt-render>
+            <ng-template #footer>
+              <div style="display:flex; justify-content: space-evenly;">
+                <p-button label="Save" type="submit" [disabled]="!authorForm().valid || authorForm().pristine" />
+                <p-button label="Reset" severity="secondary" [outlined]="true" (onClick)="cancelAuthor()" />
+              </div>
+            </ng-template>
+          </p-card>
+        </form>
+      </div>
+    </div>
   </div>
 </div>
-
-
-
-<h2>My Books</h2>
-<p-button label="Reload" (onClick)="reloadBooks()" />
-<xt-render displayMode="LIST_VIEW" valueType="Example Book" [value]="bookStore?.entities()" (outputs)="bookOutputChanged($event)"> </xt-render>
-
-<h2>Edit a Book</h2>
-<p-button label="Create" (onClick)="createBook()" />
-<div style="display: flex;justify-content: center; align-items: center;">
-  <div>
-    <form [formGroup]="bookForm()" (ngSubmit)="saveBook()">
-      <p-card [style]="{width: '50em'}">
-        <xt-render displayMode="FULL_EDITABLE" valueType="Example Book" [formGroup]="bookForm()"> </xt-render>
-        <ng-template #footer>
-          <div style="display:flex; justify-content: space-evenly;">
-            <p-button label="Save" type="submit" [disabled]="!bookForm().valid || bookForm().pristine" />
-            <p-button label="Reset" severity="secondary" [outlined]="true" (onClick)="cancelBook()" />
-          </div>
-        </ng-template>
-      </p-card>
-    </form>
+<div class="book-container">
+  <div class="book-title"><h2>My Books</h2><p-button label="Reload" (onClick)="reloadBooks()" /></div>
+  <div class="book-list">
+    <xt-render displayMode="LIST_VIEW" valueType="Example Book" [value]="bookStore?.entities()" (outputs)="bookOutputChanged($event)"> </xt-render>
+  </div>
+  <div class="book-edit-title">
+    <h2>Edit a Book</h2>
+    <p-button label="Create" (onClick)="createBook()" />
+  </div>
+  <div class="book-edit">
+    <div style="display: flex;justify-content: center; align-items: center;">
+      <div>
+        <form [formGroup]="bookForm()" (ngSubmit)="saveBook()">
+          <p-card [style]="{width: '50em'}">
+            <xt-render displayMode="FULL_EDITABLE" valueType="Example Book" [formGroup]="bookForm()"> </xt-render>
+            <ng-template #footer>
+              <div style="display:flex; justify-content: space-evenly;">
+                <p-button label="Save" type="submit" [disabled]="!bookForm().valid || bookForm().pristine" />
+                <p-button label="Reset" severity="secondary" [outlined]="true" (onClick)="cancelBook()" />
+              </div>
+            </ng-template>
+          </p-card>
+        </form>
+      </div>
+    </div>
   </div>
 </div>
-

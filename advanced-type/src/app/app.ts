@@ -36,7 +36,7 @@ export class App {
         price: 'money-amount'
       },
       'Example Author': {
-        displayTemplate: '<%=it.name%> <%if (it.born!=null) {%>(<%=typeof (it.born)%>)<%}%>',
+        displayTemplate: '<%=it.name%> <%if (it.born!=null) {%>(<%=it.born.getFullYear()%>)<%}%>',
         children:{
           name: 'string',
           born: 'date',

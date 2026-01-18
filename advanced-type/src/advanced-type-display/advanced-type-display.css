@@ -1,0 +1,48 @@
+.author-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap:1em;
+}
+
+.author-title {
+  width: 15em;
+  flex: initial;
+}
+
+.author-edit-title {
+  width: 15em;
+  flex: initial;
+}
+
+.author-list {
+  flex: auto;
+}
+
+.author-edit {
+  flex: initial;
+}
+
+.book-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap:1em;
+  margin-top: 4em;
+}
+
+.book-title {
+  width: 15em;
+  flex: initial;
+}
+
+.book-edit-title {
+  width: 15em;
+  flex: initial;
+}
+
+.book-list {
+  flex: auto;
+}
+
+.book-edit {
+  flex: initial;
+}
