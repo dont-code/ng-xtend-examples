@@ -1,0 +1,22 @@
+<h2>My Books</h2>
+<p-button label="Reload" (onClick)="reloadBooks()" />
+<xt-render displayMode="LIST_VIEW" valueType="Example Book" [value]="elementsToDisplay()" (outputs)="outputChanged($event)"> </xt-render>
+
+<h2>Edit a Book</h2>
+<p-button label="Create" (onClick)="createBook()" />
+<div style="display: flex;justify-content: center; align-items: center;">
+  <div>
+    <form [formGroup]="bookForm()" (ngSubmit)="saveBook()">
+      <p-card [style]="{width: '50em'}">
+        <xt-render displayMode="FULL_EDITABLE" valueType="Example Book" [formGroup]="bookForm()"> </xt-render>
+        <ng-template #footer>
+          <div style="display:flex; justify-content: space-evenly;">
+            <p-button label="Save" type="submit" [disabled]="!bookForm().valid || bookForm().pristine" />
+            <p-button label="Reset" severity="secondary" [outlined]="true" (onClick)="cancelBook()" />
+          </div>
+        </ng-template>
+      </p-card>
+    </form>
+  </div>
+</div>
+

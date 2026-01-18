@@ -58,6 +58,9 @@ importers:
       '@rush-temp/ng-xtend-basic-example':
         specifier: file:./projects/ng-xtend-basic-example.tgz
         version: file:projects/ng-xtend-basic-example.tgz(@types/node@25.0.3)(chokidar@4.0.3)(postcss@8.5.6)
+      '@rush-temp/ng-xtend-dynamic-example':
+        specifier: file:./projects/ng-xtend-dynamic-example.tgz
+        version: file:projects/ng-xtend-dynamic-example.tgz(@types/node@25.0.3)(chokidar@4.0.3)(postcss@8.5.6)
       '@rush-temp/ng-xtend-inout-example':
         specifier: file:./projects/ng-xtend-inout-example.tgz
         version: file:projects/ng-xtend-inout-example.tgz(@types/node@25.0.3)(chokidar@4.0.3)(postcss@8.5.6)
@@ -110,23 +113,23 @@ importers:
         specifier: ~5.8.2
         version: 5.8.3
       xt-components:
-        specifier: ^0.6.3
-        version: 0.6.3(7a7c474e1cba2d1d7d9ac4c9bee536e5)
+        specifier: ^0.6.4
+        version: 0.6.4(cd22dae9c75f25fbaf925e0d3e930c56)
       xt-plugin-default:
-        specifier: ^0.6.3
-        version: 0.6.3(@angular/common@20.3.15(@angular/core@20.3.15(@angular/compiler@20.3.15)(rxjs@7.8.2))(rxjs@7.8.2))(@angular/core@20.3.15(@angular/compiler@20.3.15)(rxjs@7.8.2))(xt-components@0.6.3(7a7c474e1cba2d1d7d9ac4c9bee536e5))
+        specifier: ^0.6.4
+        version: 0.6.4(@angular/common@20.3.15(@angular/core@20.3.15(@angular/compiler@20.3.15)(rxjs@7.8.2))(rxjs@7.8.2))(@angular/core@20.3.15(@angular/compiler@20.3.15)(rxjs@7.8.2))(xt-components@0.6.4(cd22dae9c75f25fbaf925e0d3e930c56))
       xt-plugin-finance:
-        specifier: ~0.6.3
-        version: 0.6.3(e58134749add66f089cbbe412445d380)
+        specifier: ~0.6.4
+        version: 0.6.4(05af4cacd2e352451eb29593e1da1d8f)
       xt-plugin-intl:
-        specifier: ~0.6.3
-        version: 0.6.3(e58134749add66f089cbbe412445d380)
+        specifier: ~0.6.4
+        version: 0.6.4(05af4cacd2e352451eb29593e1da1d8f)
       xt-store:
-        specifier: ~0.6.3
-        version: 0.6.3(@angular/common@20.3.15(@angular/core@20.3.15(@angular/compiler@20.3.15)(rxjs@7.8.2))(rxjs@7.8.2))(@angular/core@20.3.15(@angular/compiler@20.3.15)(rxjs@7.8.2))(xt-type@0.10.3)
+        specifier: ~0.6.4
+        version: 0.6.4(@angular/common@20.3.15(@angular/core@20.3.15(@angular/compiler@20.3.15)(rxjs@7.8.2))(rxjs@7.8.2))(@angular/core@20.3.15(@angular/compiler@20.3.15)(rxjs@7.8.2))(xt-type@0.10.4)
       xt-type:
-        specifier: ^0.10.3
-        version: 0.10.3
+        specifier: ^0.10.4
+        version: 0.10.4
 
 packages:
 
@@ -1243,6 +1246,10 @@ packages:
 
   '@rush-temp/ng-xtend-basic-example@file:projects/ng-xtend-basic-example.tgz':
     resolution: {integrity: sha512-r+6rEcg2hv6MDccrbOg8udBzy1x3igu/RgYo06t5FmOWrswR+mIofDiIYJdu9G1oD7Hrp8ZsEFx3hV5qWVmO8Q==, tarball: file:projects/ng-xtend-basic-example.tgz}
+    version: 0.0.0
+
+  '@rush-temp/ng-xtend-dynamic-example@file:projects/ng-xtend-dynamic-example.tgz':
+    resolution: {integrity: sha512-8DnAXseg3IneXIjFBTsv2aZNSrkreXh6+gJRcfncOsdtj+33JpMVlZQcI9RWLKowHuvrYGt3S0tX7ytchBL5gQ==, tarball: file:projects/ng-xtend-dynamic-example.tgz}
     version: 0.0.0
 
   '@rush-temp/ng-xtend-inout-example@file:projects/ng-xtend-inout-example.tgz':
@@ -3033,22 +3040,6 @@ packages:
       utf-8-validate:
         optional: true
 
-  xt-components@0.6.3:
-    resolution: {integrity: sha512-sdnIWUCq9iBktBsR8uFB+CnGxA/hDoJ8SG5awxjuXF5qKvx47ZCOMxMRLhLNo2h2PyDXiXBSmFLfCgS5qGJbjw==}
-    peerDependencies:
-      '@angular/animations': ^20.2.3
-      '@angular/common': ^20.2.3
-      '@angular/compiler': ^20.2.3
-      '@angular/core': ^20.2.3
-      '@angular/forms': ^20.2.3
-      '@angular/platform-browser': ^20.2.3
-      '@angular/platform-browser-dynamic': ^20.2.3
-      '@angular/router': ^20.2.3
-      primeicons: ^7.0.0
-      primeng: ^20.0.1
-      rxjs: ~7.8.2
-      xt-type: ^0.9.0
-
   xt-components@0.6.4:
     resolution: {integrity: sha512-cXwHOp/t+tEwi+O5Uw+tAdviuwDk+kYr12oiAICYmX1CT7jW9OkwYbZvut4yE6CutRPG6jceWH7c+U2i8rZM6Q==}
     peerDependencies:
@@ -3065,13 +3056,6 @@ packages:
       rxjs: ~7.8.2
       xt-type: ^0.9.0
 
-  xt-plugin-default@0.6.3:
-    resolution: {integrity: sha512-WoXlW9QpoZsdv5TeNigqmGMXU0rQg2sXWmjBpXrKb9da4iUadHiJ3HTDRaDQxG+RUrSMiUcLAqlv3csg29rdXQ==}
-    peerDependencies:
-      '@angular/common': ^20.0.0
-      '@angular/core': ^20.0.0
-      xt-components: ^0.6.0
-
   xt-plugin-default@0.6.4:
     resolution: {integrity: sha512-ACBJXpGu7tjDWwucP93jFcHuuee08YbaJmiAbBqo60V2GkaeYdKJZtlHRiojls6mwzn/qSc+/l38GzB/QyU+vw==}
     peerDependencies:
@@ -3079,40 +3063,8 @@ packages:
       '@angular/core': ^20.0.0
       xt-components: ^0.6.0
 
-  xt-plugin-finance@0.6.3:
-    resolution: {integrity: sha512-FZmSR+XL/4P0LYDM3PjGRfFVKTAHhrMZEw7Yzwk6YRahXExqYgao7Xz56Nr/I+bzpqU8VNqoEkfm7f97NcLI8g==}
-    peerDependencies:
-      '@angular/animations': ^20.0.0
-      '@angular/common': ^20.0.0
-      '@angular/compiler': ^20.0.0
-      '@angular/core': ^20.0.0
-      '@angular/forms': ^20.0.0
-      '@angular/platform-browser': ^20.0.0
-      '@angular/platform-browser-dynamic': ^20.0.0
-      '@angular/router': ^20.0.0
-      primeicons: ^7.0.0
-      primeng: ^20.0.0
-      rxjs: ^7.8.0
-      xt-components: ^0.6.0
-
   xt-plugin-finance@0.6.4:
     resolution: {integrity: sha512-D2Ak0yFT5jsCJOpc7JRkMFoab2wFFmC00sHVzLP2jNOAUd0YsGc2XGO6yvJdob713YFWKzUzk8NTDib0VquFFA==}
-    peerDependencies:
-      '@angular/animations': ^20.0.0
-      '@angular/common': ^20.0.0
-      '@angular/compiler': ^20.0.0
-      '@angular/core': ^20.0.0
-      '@angular/forms': ^20.0.0
-      '@angular/platform-browser': ^20.0.0
-      '@angular/platform-browser-dynamic': ^20.0.0
-      '@angular/router': ^20.0.0
-      primeicons: ^7.0.0
-      primeng: ^20.0.0
-      rxjs: ^7.8.0
-      xt-components: ^0.6.0
-
-  xt-plugin-intl@0.6.3:
-    resolution: {integrity: sha512-87uMpBHxmtWD68AOxP1/sYucATE904z503JWZL++GLgfUD35rF36PQLozKXh1z735v7CLzli4adiF7GRHTv2dw==}
     peerDependencies:
       '@angular/animations': ^20.0.0
       '@angular/common': ^20.0.0
@@ -3143,23 +3095,12 @@ packages:
       rxjs: ^7.8.0
       xt-components: ^0.6.0
 
-  xt-store@0.6.3:
-    resolution: {integrity: sha512-71dv0FUbducmv6iPyWnMfxnZArR8YTEmwbAB97g2gEMa0K1ZU7D0aM9dPbfoViOEp5bbBt0weQV5bMVco0y16Q==}
-    peerDependencies:
-      '@angular/common': ^20.0.0
-      '@angular/core': ^20.0.0
-      xt-type: ^0.9.0
-
   xt-store@0.6.4:
     resolution: {integrity: sha512-VVCYjz6TZ1LWJmCz2YW4wV7SOFuN3FkllERE6NT2MIqtI9i7Gzlm6YFh1pBFx3an+Nb87DmQ/Z7RmlwqwDIWGg==}
     peerDependencies:
       '@angular/common': ^20.0.0
       '@angular/core': ^20.0.0
       xt-type: ^0.9.0
-
-  xt-type@0.10.3:
-    resolution: {integrity: sha512-cler8+iAciZSP+AQl3/GctoYUFzWZWxaOKymmjRco6jI3H2R9HxdUjQrju7DbwlEyRFazaFiMNl9gGRaYU0XiQ==}
-    engines: {node: '>=20'}
 
   xt-type@0.10.4:
     resolution: {integrity: sha512-3CdA/eRZGqib+KDqMaQ75NWfIE/T5GiPeX5tetgCme9H6rHERfvJvARvDgZlaMSayrY4hcO/LVE+cYhb13Ty/w==}
@@ -4352,6 +4293,66 @@ snapshots:
       typescript: 5.8.3
       xt-components: 0.6.4(cd22dae9c75f25fbaf925e0d3e930c56)
       xt-plugin-default: 0.6.4(@angular/common@20.3.15(@angular/core@20.3.15(@angular/compiler@20.3.15)(rxjs@7.8.2))(rxjs@7.8.2))(@angular/core@20.3.15(@angular/compiler@20.3.15)(rxjs@7.8.2))(xt-components@0.6.4(cd22dae9c75f25fbaf925e0d3e930c56))
+      xt-type: 0.10.4
+    transitivePeerDependencies:
+      - '@angular/cdk'
+      - '@angular/localize'
+      - '@angular/platform-server'
+      - '@angular/service-worker'
+      - '@angular/ssr'
+      - '@cfworker/json-schema'
+      - '@types/node'
+      - bufferutil
+      - chokidar
+      - debug
+      - jiti
+      - less
+      - lightningcss
+      - ng-packagr
+      - postcss
+      - sass-embedded
+      - stylus
+      - sugarss
+      - supports-color
+      - tailwindcss
+      - terser
+      - tsx
+      - utf-8-validate
+      - vitest
+      - yaml
+      - zone.js
+
+  '@rush-temp/ng-xtend-dynamic-example@file:projects/ng-xtend-dynamic-example.tgz(@types/node@25.0.3)(chokidar@4.0.3)(postcss@8.5.6)':
+    dependencies:
+      '@angular-architects/native-federation': 20.1.7(typescript@5.8.3)
+      '@angular/animations': 20.3.16(@angular/core@20.3.15(@angular/compiler@20.3.15)(rxjs@7.8.2))
+      '@angular/build': 20.3.13(@angular/compiler-cli@20.3.15(@angular/compiler@20.3.15)(typescript@5.8.3))(@angular/compiler@20.3.15)(@angular/core@20.3.15(@angular/compiler@20.3.15)(rxjs@7.8.2))(@angular/platform-browser@20.3.15(@angular/animations@20.3.16(@angular/core@20.3.15(@angular/compiler@20.3.15)(rxjs@7.8.2)))(@angular/common@20.3.15(@angular/core@20.3.15(@angular/compiler@20.3.15)(rxjs@7.8.2))(rxjs@7.8.2))(@angular/core@20.3.15(@angular/compiler@20.3.15)(rxjs@7.8.2)))(@types/node@25.0.3)(chokidar@4.0.3)(karma@6.4.4)(postcss@8.5.6)(tslib@2.8.1)(typescript@5.8.3)
+      '@angular/cli': 20.3.13(@types/node@25.0.3)(chokidar@4.0.3)
+      '@angular/common': 20.3.15(@angular/core@20.3.15(@angular/compiler@20.3.15)(rxjs@7.8.2))(rxjs@7.8.2)
+      '@angular/compiler': 20.3.15
+      '@angular/compiler-cli': 20.3.15(@angular/compiler@20.3.15)(typescript@5.8.3)
+      '@angular/core': 20.3.15(@angular/compiler@20.3.15)(rxjs@7.8.2)
+      '@angular/forms': 20.3.15(@angular/common@20.3.15(@angular/core@20.3.15(@angular/compiler@20.3.15)(rxjs@7.8.2))(rxjs@7.8.2))(@angular/core@20.3.15(@angular/compiler@20.3.15)(rxjs@7.8.2))(@angular/platform-browser@20.3.15(@angular/animations@20.3.16(@angular/core@20.3.15(@angular/compiler@20.3.15)(rxjs@7.8.2)))(@angular/common@20.3.15(@angular/core@20.3.15(@angular/compiler@20.3.15)(rxjs@7.8.2))(rxjs@7.8.2))(@angular/core@20.3.15(@angular/compiler@20.3.15)(rxjs@7.8.2)))(rxjs@7.8.2)
+      '@angular/platform-browser': 20.3.15(@angular/animations@20.3.16(@angular/core@20.3.15(@angular/compiler@20.3.15)(rxjs@7.8.2)))(@angular/common@20.3.15(@angular/core@20.3.15(@angular/compiler@20.3.15)(rxjs@7.8.2))(rxjs@7.8.2))(@angular/core@20.3.15(@angular/compiler@20.3.15)(rxjs@7.8.2))
+      '@angular/platform-browser-dynamic': 20.3.16(@angular/common@20.3.15(@angular/core@20.3.15(@angular/compiler@20.3.15)(rxjs@7.8.2))(rxjs@7.8.2))(@angular/compiler@20.3.15)(@angular/core@20.3.15(@angular/compiler@20.3.15)(rxjs@7.8.2))(@angular/platform-browser@20.3.15(@angular/animations@20.3.16(@angular/core@20.3.15(@angular/compiler@20.3.15)(rxjs@7.8.2)))(@angular/common@20.3.15(@angular/core@20.3.15(@angular/compiler@20.3.15)(rxjs@7.8.2))(rxjs@7.8.2))(@angular/core@20.3.15(@angular/compiler@20.3.15)(rxjs@7.8.2)))
+      '@angular/router': 20.3.15(@angular/common@20.3.15(@angular/core@20.3.15(@angular/compiler@20.3.15)(rxjs@7.8.2))(rxjs@7.8.2))(@angular/core@20.3.15(@angular/compiler@20.3.15)(rxjs@7.8.2))(@angular/platform-browser@20.3.15(@angular/animations@20.3.16(@angular/core@20.3.15(@angular/compiler@20.3.15)(rxjs@7.8.2)))(@angular/common@20.3.15(@angular/core@20.3.15(@angular/compiler@20.3.15)(rxjs@7.8.2))(rxjs@7.8.2))(@angular/core@20.3.15(@angular/compiler@20.3.15)(rxjs@7.8.2)))(rxjs@7.8.2)
+      '@ngrx/signals': 20.1.0(@angular/core@20.3.15(@angular/compiler@20.3.15)(rxjs@7.8.2))(rxjs@7.8.2)
+      '@primeuix/themes': 2.0.2
+      '@types/jasmine': 5.1.13
+      jasmine-core: 5.7.1
+      karma: 6.4.4
+      karma-chrome-launcher: 3.2.0
+      karma-coverage: 2.2.1
+      karma-jasmine: 5.1.0(karma@6.4.4)
+      karma-jasmine-html-reporter: 2.1.0(jasmine-core@5.7.1)(karma-jasmine@5.1.0(karma@6.4.4))(karma@6.4.4)
+      primeicons: 7.0.0
+      primeng: 20.4.0(32b71fed331e08b2ea48e8ed5fa632fe)
+      rxjs: 7.8.2
+      tslib: 2.8.1
+      typescript: 5.8.3
+      xt-components: 0.6.4(cd22dae9c75f25fbaf925e0d3e930c56)
+      xt-plugin-default: 0.6.4(@angular/common@20.3.15(@angular/core@20.3.15(@angular/compiler@20.3.15)(rxjs@7.8.2))(rxjs@7.8.2))(@angular/core@20.3.15(@angular/compiler@20.3.15)(rxjs@7.8.2))(xt-components@0.6.4(cd22dae9c75f25fbaf925e0d3e930c56))
+      xt-store: 0.6.4(@angular/common@20.3.15(@angular/core@20.3.15(@angular/compiler@20.3.15)(rxjs@7.8.2))(rxjs@7.8.2))(@angular/core@20.3.15(@angular/compiler@20.3.15)(rxjs@7.8.2))(xt-type@0.10.4)
       xt-type: 0.10.4
     transitivePeerDependencies:
       - '@angular/cdk'
@@ -6592,22 +6593,6 @@ snapshots:
 
   ws@8.18.3: {}
 
-  xt-components@0.6.3(7a7c474e1cba2d1d7d9ac4c9bee536e5):
-    dependencies:
-      '@angular/animations': 20.3.16(@angular/core@20.3.15(@angular/compiler@20.3.15)(rxjs@7.8.2))
-      '@angular/common': 20.3.15(@angular/core@20.3.15(@angular/compiler@20.3.15)(rxjs@7.8.2))(rxjs@7.8.2)
-      '@angular/compiler': 20.3.15
-      '@angular/core': 20.3.15(@angular/compiler@20.3.15)(rxjs@7.8.2)
-      '@angular/forms': 20.3.15(@angular/common@20.3.15(@angular/core@20.3.15(@angular/compiler@20.3.15)(rxjs@7.8.2))(rxjs@7.8.2))(@angular/core@20.3.15(@angular/compiler@20.3.15)(rxjs@7.8.2))(@angular/platform-browser@20.3.15(@angular/animations@20.3.16(@angular/core@20.3.15(@angular/compiler@20.3.15)(rxjs@7.8.2)))(@angular/common@20.3.15(@angular/core@20.3.15(@angular/compiler@20.3.15)(rxjs@7.8.2))(rxjs@7.8.2))(@angular/core@20.3.15(@angular/compiler@20.3.15)(rxjs@7.8.2)))(rxjs@7.8.2)
-      '@angular/platform-browser': 20.3.15(@angular/animations@20.3.16(@angular/core@20.3.15(@angular/compiler@20.3.15)(rxjs@7.8.2)))(@angular/common@20.3.15(@angular/core@20.3.15(@angular/compiler@20.3.15)(rxjs@7.8.2))(rxjs@7.8.2))(@angular/core@20.3.15(@angular/compiler@20.3.15)(rxjs@7.8.2))
-      '@angular/platform-browser-dynamic': 20.3.16(@angular/common@20.3.15(@angular/core@20.3.15(@angular/compiler@20.3.15)(rxjs@7.8.2))(rxjs@7.8.2))(@angular/compiler@20.3.15)(@angular/core@20.3.15(@angular/compiler@20.3.15)(rxjs@7.8.2))(@angular/platform-browser@20.3.15(@angular/animations@20.3.16(@angular/core@20.3.15(@angular/compiler@20.3.15)(rxjs@7.8.2)))(@angular/common@20.3.15(@angular/core@20.3.15(@angular/compiler@20.3.15)(rxjs@7.8.2))(rxjs@7.8.2))(@angular/core@20.3.15(@angular/compiler@20.3.15)(rxjs@7.8.2)))
-      '@angular/router': 20.3.15(@angular/common@20.3.15(@angular/core@20.3.15(@angular/compiler@20.3.15)(rxjs@7.8.2))(rxjs@7.8.2))(@angular/core@20.3.15(@angular/compiler@20.3.15)(rxjs@7.8.2))(@angular/platform-browser@20.3.15(@angular/animations@20.3.16(@angular/core@20.3.15(@angular/compiler@20.3.15)(rxjs@7.8.2)))(@angular/common@20.3.15(@angular/core@20.3.15(@angular/compiler@20.3.15)(rxjs@7.8.2))(rxjs@7.8.2))(@angular/core@20.3.15(@angular/compiler@20.3.15)(rxjs@7.8.2)))(rxjs@7.8.2)
-      primeicons: 7.0.0
-      primeng: 20.4.0(32b71fed331e08b2ea48e8ed5fa632fe)
-      rxjs: 7.8.2
-      tslib: 2.8.1
-      xt-type: 0.10.3
-
   xt-components@0.6.4(cd22dae9c75f25fbaf925e0d3e930c56):
     dependencies:
       '@angular/animations': 20.3.16(@angular/core@20.3.15(@angular/compiler@20.3.15)(rxjs@7.8.2))
@@ -6624,35 +6609,12 @@ snapshots:
       tslib: 2.8.1
       xt-type: 0.10.4
 
-  xt-plugin-default@0.6.3(@angular/common@20.3.15(@angular/core@20.3.15(@angular/compiler@20.3.15)(rxjs@7.8.2))(rxjs@7.8.2))(@angular/core@20.3.15(@angular/compiler@20.3.15)(rxjs@7.8.2))(xt-components@0.6.3(7a7c474e1cba2d1d7d9ac4c9bee536e5)):
-    dependencies:
-      '@angular/common': 20.3.15(@angular/core@20.3.15(@angular/compiler@20.3.15)(rxjs@7.8.2))(rxjs@7.8.2)
-      '@angular/core': 20.3.15(@angular/compiler@20.3.15)(rxjs@7.8.2)
-      tslib: 2.8.1
-      xt-components: 0.6.3(7a7c474e1cba2d1d7d9ac4c9bee536e5)
-
   xt-plugin-default@0.6.4(@angular/common@20.3.15(@angular/core@20.3.15(@angular/compiler@20.3.15)(rxjs@7.8.2))(rxjs@7.8.2))(@angular/core@20.3.15(@angular/compiler@20.3.15)(rxjs@7.8.2))(xt-components@0.6.4(cd22dae9c75f25fbaf925e0d3e930c56)):
     dependencies:
       '@angular/common': 20.3.15(@angular/core@20.3.15(@angular/compiler@20.3.15)(rxjs@7.8.2))(rxjs@7.8.2)
       '@angular/core': 20.3.15(@angular/compiler@20.3.15)(rxjs@7.8.2)
       tslib: 2.8.1
       xt-components: 0.6.4(cd22dae9c75f25fbaf925e0d3e930c56)
-
-  xt-plugin-finance@0.6.3(e58134749add66f089cbbe412445d380):
-    dependencies:
-      '@angular/animations': 20.3.16(@angular/core@20.3.15(@angular/compiler@20.3.15)(rxjs@7.8.2))
-      '@angular/common': 20.3.15(@angular/core@20.3.15(@angular/compiler@20.3.15)(rxjs@7.8.2))(rxjs@7.8.2)
-      '@angular/compiler': 20.3.15
-      '@angular/core': 20.3.15(@angular/compiler@20.3.15)(rxjs@7.8.2)
-      '@angular/forms': 20.3.15(@angular/common@20.3.15(@angular/core@20.3.15(@angular/compiler@20.3.15)(rxjs@7.8.2))(rxjs@7.8.2))(@angular/core@20.3.15(@angular/compiler@20.3.15)(rxjs@7.8.2))(@angular/platform-browser@20.3.15(@angular/animations@20.3.16(@angular/core@20.3.15(@angular/compiler@20.3.15)(rxjs@7.8.2)))(@angular/common@20.3.15(@angular/core@20.3.15(@angular/compiler@20.3.15)(rxjs@7.8.2))(rxjs@7.8.2))(@angular/core@20.3.15(@angular/compiler@20.3.15)(rxjs@7.8.2)))(rxjs@7.8.2)
-      '@angular/platform-browser': 20.3.15(@angular/animations@20.3.16(@angular/core@20.3.15(@angular/compiler@20.3.15)(rxjs@7.8.2)))(@angular/common@20.3.15(@angular/core@20.3.15(@angular/compiler@20.3.15)(rxjs@7.8.2))(rxjs@7.8.2))(@angular/core@20.3.15(@angular/compiler@20.3.15)(rxjs@7.8.2))
-      '@angular/platform-browser-dynamic': 20.3.16(@angular/common@20.3.15(@angular/core@20.3.15(@angular/compiler@20.3.15)(rxjs@7.8.2))(rxjs@7.8.2))(@angular/compiler@20.3.15)(@angular/core@20.3.15(@angular/compiler@20.3.15)(rxjs@7.8.2))(@angular/platform-browser@20.3.15(@angular/animations@20.3.16(@angular/core@20.3.15(@angular/compiler@20.3.15)(rxjs@7.8.2)))(@angular/common@20.3.15(@angular/core@20.3.15(@angular/compiler@20.3.15)(rxjs@7.8.2))(rxjs@7.8.2))(@angular/core@20.3.15(@angular/compiler@20.3.15)(rxjs@7.8.2)))
-      '@angular/router': 20.3.15(@angular/common@20.3.15(@angular/core@20.3.15(@angular/compiler@20.3.15)(rxjs@7.8.2))(rxjs@7.8.2))(@angular/core@20.3.15(@angular/compiler@20.3.15)(rxjs@7.8.2))(@angular/platform-browser@20.3.15(@angular/animations@20.3.16(@angular/core@20.3.15(@angular/compiler@20.3.15)(rxjs@7.8.2)))(@angular/common@20.3.15(@angular/core@20.3.15(@angular/compiler@20.3.15)(rxjs@7.8.2))(rxjs@7.8.2))(@angular/core@20.3.15(@angular/compiler@20.3.15)(rxjs@7.8.2)))(rxjs@7.8.2)
-      primeicons: 7.0.0
-      primeng: 20.4.0(32b71fed331e08b2ea48e8ed5fa632fe)
-      rxjs: 7.8.2
-      tslib: 2.8.1
-      xt-components: 0.6.3(7a7c474e1cba2d1d7d9ac4c9bee536e5)
 
   xt-plugin-finance@0.6.4(05af4cacd2e352451eb29593e1da1d8f):
     dependencies:
@@ -6670,22 +6632,6 @@ snapshots:
       tslib: 2.8.1
       xt-components: 0.6.4(cd22dae9c75f25fbaf925e0d3e930c56)
 
-  xt-plugin-intl@0.6.3(e58134749add66f089cbbe412445d380):
-    dependencies:
-      '@angular/animations': 20.3.16(@angular/core@20.3.15(@angular/compiler@20.3.15)(rxjs@7.8.2))
-      '@angular/common': 20.3.15(@angular/core@20.3.15(@angular/compiler@20.3.15)(rxjs@7.8.2))(rxjs@7.8.2)
-      '@angular/compiler': 20.3.15
-      '@angular/core': 20.3.15(@angular/compiler@20.3.15)(rxjs@7.8.2)
-      '@angular/forms': 20.3.15(@angular/common@20.3.15(@angular/core@20.3.15(@angular/compiler@20.3.15)(rxjs@7.8.2))(rxjs@7.8.2))(@angular/core@20.3.15(@angular/compiler@20.3.15)(rxjs@7.8.2))(@angular/platform-browser@20.3.15(@angular/animations@20.3.16(@angular/core@20.3.15(@angular/compiler@20.3.15)(rxjs@7.8.2)))(@angular/common@20.3.15(@angular/core@20.3.15(@angular/compiler@20.3.15)(rxjs@7.8.2))(rxjs@7.8.2))(@angular/core@20.3.15(@angular/compiler@20.3.15)(rxjs@7.8.2)))(rxjs@7.8.2)
-      '@angular/platform-browser': 20.3.15(@angular/animations@20.3.16(@angular/core@20.3.15(@angular/compiler@20.3.15)(rxjs@7.8.2)))(@angular/common@20.3.15(@angular/core@20.3.15(@angular/compiler@20.3.15)(rxjs@7.8.2))(rxjs@7.8.2))(@angular/core@20.3.15(@angular/compiler@20.3.15)(rxjs@7.8.2))
-      '@angular/platform-browser-dynamic': 20.3.16(@angular/common@20.3.15(@angular/core@20.3.15(@angular/compiler@20.3.15)(rxjs@7.8.2))(rxjs@7.8.2))(@angular/compiler@20.3.15)(@angular/core@20.3.15(@angular/compiler@20.3.15)(rxjs@7.8.2))(@angular/platform-browser@20.3.15(@angular/animations@20.3.16(@angular/core@20.3.15(@angular/compiler@20.3.15)(rxjs@7.8.2)))(@angular/common@20.3.15(@angular/core@20.3.15(@angular/compiler@20.3.15)(rxjs@7.8.2))(rxjs@7.8.2))(@angular/core@20.3.15(@angular/compiler@20.3.15)(rxjs@7.8.2)))
-      '@angular/router': 20.3.15(@angular/common@20.3.15(@angular/core@20.3.15(@angular/compiler@20.3.15)(rxjs@7.8.2))(rxjs@7.8.2))(@angular/core@20.3.15(@angular/compiler@20.3.15)(rxjs@7.8.2))(@angular/platform-browser@20.3.15(@angular/animations@20.3.16(@angular/core@20.3.15(@angular/compiler@20.3.15)(rxjs@7.8.2)))(@angular/common@20.3.15(@angular/core@20.3.15(@angular/compiler@20.3.15)(rxjs@7.8.2))(rxjs@7.8.2))(@angular/core@20.3.15(@angular/compiler@20.3.15)(rxjs@7.8.2)))(rxjs@7.8.2)
-      primeicons: 7.0.0
-      primeng: 20.4.0(32b71fed331e08b2ea48e8ed5fa632fe)
-      rxjs: 7.8.2
-      tslib: 2.8.1
-      xt-components: 0.6.3(7a7c474e1cba2d1d7d9ac4c9bee536e5)
-
   xt-plugin-intl@0.6.4(05af4cacd2e352451eb29593e1da1d8f):
     dependencies:
       '@angular/animations': 20.3.16(@angular/core@20.3.15(@angular/compiler@20.3.15)(rxjs@7.8.2))
@@ -6702,23 +6648,12 @@ snapshots:
       tslib: 2.8.1
       xt-components: 0.6.4(cd22dae9c75f25fbaf925e0d3e930c56)
 
-  xt-store@0.6.3(@angular/common@20.3.15(@angular/core@20.3.15(@angular/compiler@20.3.15)(rxjs@7.8.2))(rxjs@7.8.2))(@angular/core@20.3.15(@angular/compiler@20.3.15)(rxjs@7.8.2))(xt-type@0.10.3):
-    dependencies:
-      '@angular/common': 20.3.15(@angular/core@20.3.15(@angular/compiler@20.3.15)(rxjs@7.8.2))(rxjs@7.8.2)
-      '@angular/core': 20.3.15(@angular/compiler@20.3.15)(rxjs@7.8.2)
-      tslib: 2.8.1
-      xt-type: 0.10.3
-
   xt-store@0.6.4(@angular/common@20.3.15(@angular/core@20.3.15(@angular/compiler@20.3.15)(rxjs@7.8.2))(rxjs@7.8.2))(@angular/core@20.3.15(@angular/compiler@20.3.15)(rxjs@7.8.2))(xt-type@0.10.4):
     dependencies:
       '@angular/common': 20.3.15(@angular/core@20.3.15(@angular/compiler@20.3.15)(rxjs@7.8.2))(rxjs@7.8.2)
       '@angular/core': 20.3.15(@angular/compiler@20.3.15)(rxjs@7.8.2)
       tslib: 2.8.1
       xt-type: 0.10.4
-
-  xt-type@0.10.3:
-    dependencies:
-      eta: 4.5.0
 
   xt-type@0.10.4:
     dependencies:

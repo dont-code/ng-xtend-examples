@@ -1,30 +1,23 @@
-# Dynamic
+# ![ng-xtend logo](public/logo.png) Dynamic plugin Example
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.0.5.
+Same as store example, however the plugins are loaded dynamically from the web, instead of being bundled with the application.
+This allows to update the plugins without rebuilding the application.
+
+## What's included
+Same as the [store example](../store), with the addition of:
+- We remove the Finance and International plugins from the package (see `package.json`)
+- Native federation framework is added (see `package.json`)
+- Finance and International Plugins are loaded from internet (see `src/app/app.ts`)
 
 ## Development server
 
 To start a local development server, run:
 
 ```bash
-ng serve
+ng serve store
 ```
 
 Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
-
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
 
 ## Building
 
@@ -43,17 +36,3 @@ To execute unit tests with the [Karma](https://karma-runner.github.io) test runn
 ```bash
 ng test
 ```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
