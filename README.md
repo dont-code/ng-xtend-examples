@@ -14,7 +14,7 @@ The table below describes the different examples:
 | [inout-example](inout)                 | A full list / edit / view flow is setup thanks to inputs / outputs connecting unknown components together.                                                                    | Yes                  | Custom    | Static         | Yes         | No    |
 | [store-example](store)                 | Edited elements are persisted between sessions thanks to the xt-store library included with the ng-xtend framework.                                                           | Yes                  | Custom    | Static         | Yes         | Yes   |
 | [advanced-type-example](advanced-type) | Showcase support for advanced types and models (like references)                                                                                                              | Yes                  | Custom    | Static         | Advanced    | Yes   |
-| [dynamic-example](Dynamic)             | Loads all plugins dynamically from another website using [Native-Federation](https://github.com/angular-architects/module-federation-plugin/tree/main/libs/native-federation) | Yes                  | Custom    | Dynamic        | Yes    | Yes   |
+| [dynamic-example](dynamic)             | Loads all plugins dynamically from another website using [Native-Federation](https://github.com/angular-architects/module-federation-plugin/tree/main/libs/native-federation) | Yes                  | Custom    | Dynamic        | Yes    | Yes   |
 
 
 ## Build

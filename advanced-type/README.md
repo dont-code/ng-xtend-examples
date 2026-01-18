@@ -1,6 +1,7 @@
 # ![ng-xtend logo](public/logo.png) Advanced Type Example
 
 Show how ng-xtend framework supports complex types, like many-to-one, one-to-many or many-to-many relations.
+You can see that when editing the author of a book, you can select it from a list of all authors.
 
 ## What's included
 Same as the [store example](../store), with the addition of:
