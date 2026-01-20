@@ -7,6 +7,7 @@ This allows to update the plugins without rebuilding the application.
 Same as the [store example](../store), with the addition of:
 - We remove the Finance and International plugins from the package (see `package.json`)
 - Native federation framework is added (see `package.json`)
+- Angular build is modified to support external modules loading through Federation (see `angular.json`)
 - Finance and International Plugins are loaded from internet (see `src/app/app.ts`)
 
 ## Development server

@@ -22,17 +22,17 @@ import {ManagedData} from 'xt-type';
  * As we only have the default plugin registered, the display is quite generic
  */
 @Component({
-  selector: 'app-store-display',
+  selector: 'app-dynamic-display',
   imports: [
     XtRenderComponent,
     ReactiveFormsModule,
     Card,
     Button
   ],
-  templateUrl: './store-display.html',
-  styleUrl: './store-display.css',
+  templateUrl: './dynamic-display.html',
+  styleUrl: './dynamic-display.css',
 })
-export class StoreDisplay implements OnInit{
+export class DynamicDisplay implements OnInit{
 
   resolver = inject(XtResolverService);
 
