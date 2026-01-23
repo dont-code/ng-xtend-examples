@@ -11,6 +11,7 @@ import {Card} from 'primeng/card';
 import {Button} from 'primeng/button';
 import {XtSignalStore, XtStoreManagerService} from 'xt-store';
 import {ManagedData} from 'xt-type';
+import {ConfigManagerService} from '../config-manager/config-manager.service';
 
 /**
  * We just display a static value (elementToDisplay) 3 times:
@@ -35,6 +36,7 @@ import {ManagedData} from 'xt-type';
 export class DynamicDisplay implements OnInit{
 
   resolver = inject(XtResolverService);
+  config=inject(ConfigManagerService);
 
   selectedEntity = signal<any>(null);
 

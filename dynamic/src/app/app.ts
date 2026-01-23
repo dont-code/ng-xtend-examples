@@ -3,6 +3,7 @@ import { RouterOutlet } from '@angular/router';
 import {registerDefaultPlugin} from 'xt-plugin-default';
 import {XtResolverService} from 'xt-components';
 import {XtApiStoreProvider, XtStoreManagerService} from 'xt-store';
+import {ConfigManagerService} from '../config-manager/config-manager.service';
 
 @Component({
   selector: 'app-root',
@@ -12,6 +13,7 @@ import {XtApiStoreProvider, XtStoreManagerService} from 'xt-store';
 })
 export class App {
   protected readonly resolverService = inject(XtResolverService);
+  protected readonly configService=inject(ConfigManagerService);
 
     // We inject the xt-store services
   protected readonly storeMgr = inject(XtStoreManagerService);
@@ -26,15 +28,15 @@ export class App {
     this.apiProvider.apiUrl = 'https://test.dont-code.net/demo/data';
     this.storeMgr.setDefaultStoreProvider(this.apiProvider);
 
-    this.loadPlugins([{
-      plugin: 'International Plugin',
-      url: 'https://test.dont-code.net/apps/latest/intl-plugin/remoteEntry.json'
-    }, {
-      plugin: 'Finance Plugin',
-      url: 'https://test.dont-code.net/apps/latest/finance-plugin/remoteEntry.json'
-    }]).then (() => {
-       // We declare the types handled by the framework
-      this.resolverService.registerTypes({
+    this.configService.loadConfig(
+      [{
+        plugin: 'International Plugin',
+        url: 'https://test.dont-code.net/apps/latest/intl-plugin/remoteEntry.json'
+      }, {
+        plugin: 'Finance Plugin',
+        url: 'https://test.dont-code.net/apps/latest/finance-plugin/remoteEntry.json'
+      }],
+      {
         buyType: {
           on: 'date',
           at: 'string',
@@ -48,8 +50,6 @@ export class App {
           read: 'boolean'
         }
       });
-
-    });
   }
 
   /**
