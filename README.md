@@ -24,3 +24,9 @@ then run `rush install` to install dependencies.
 - The `rush build` command will build all packages.
 
 Each package being an angular application, you can run `ng serve` to run them locally.
+
+## To note
+When loading the plugins dynamically, as for the [dynamic-example](dynamic) example, you need to match exactly the version of Angular of the plugins.
+Hence the package.json for dynamic example enforces the angular version, and is defined in a separate subspace than the other examples.
+For more information, please see [native federation blog](https://www.angulararchitects.io/blog/micro-frontends-with-modern-angular-part-2-multi-version-and-multi-framework-solutions-with-angular-elements-and-web-components)
+
