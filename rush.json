@@ -352,7 +352,7 @@
     //    * It specifies the subspace that this project belongs to.  If omitted, then the
     //    * project belongs to the "default" subspace.
     //    */
-    //   // "subspaceName": "my-subspace",
+       "subspaceName": "static-plugins",
     //
     //   /**
     //    * An optional category for usage in the "browser-approved-packages.json"
@@ -436,6 +436,7 @@
       //    * The path to the project folder, relative to the rush.json config file.
       //    */
       "projectFolder": "typed",
+      "subspaceName": "static-plugins",
       "shouldPublish": false
     },
     {
@@ -448,6 +449,7 @@
       //    * The path to the project folder, relative to the rush.json config file.
       //    */
       "projectFolder": "plugin",
+      "subspaceName": "static-plugins",
       "shouldPublish": false
     },
     {
@@ -460,6 +462,7 @@
       //    * The path to the project folder, relative to the rush.json config file.
       //    */
       "projectFolder": "inout",
+      "subspaceName": "static-plugins",
       "shouldPublish": false
     },
     {
@@ -472,6 +475,7 @@
       //    * The path to the project folder, relative to the rush.json config file.
       //    */
       "projectFolder": "store",
+      "subspaceName": "static-plugins",
       "shouldPublish": false
     },
     {
@@ -484,6 +488,7 @@
       //    * The path to the project folder, relative to the rush.json config file.
       //    */
       "projectFolder": "advanced-type",
+      "subspaceName": "static-plugins",
       "shouldPublish": false
     },
     {
@@ -496,6 +501,7 @@
       //    * The path to the project folder, relative to the rush.json config file.
       //    */
       "projectFolder": "dynamic",
+      "subspaceName": "dynamic-plugins",
       "shouldPublish": false
     }
     //
