@@ -1,4 +1,4 @@
-import {Component, computed, inject, OnInit, signal} from '@angular/core';
+import {AfterViewInit, Component, computed, inject, OnInit, signal} from '@angular/core';
 import {
   updateFormGroupWithValue,
   XtComponentOutput,
@@ -32,7 +32,7 @@ import {ManagedData} from 'xt-type';
   templateUrl: './store-display.html',
   styleUrl: './store-display.css',
 })
-export class StoreDisplay implements OnInit{
+export class StoreDisplay implements OnInit,AfterViewInit{
 
   resolver = inject(XtResolverService);
 
@@ -58,13 +58,15 @@ export class StoreDisplay implements OnInit{
   ngOnInit(): void {
       // We fist load the data from the Store
     this.store = this.storeMgr.getStoreFor("Example Book");
-    this.store.fetchEntities().catch((error) => {
+    this.updateBookForm();
+  }
+
+  ngAfterViewInit() {
+    this.store!.fetchEntities().catch((error) => {
       this.errorHandler.errorOccurred(error, "Error loading Example Books ");
     }).finally(() => {
       console.log('Loading done.');
     });
-
-    this.updateBookForm();
   }
 
   /**

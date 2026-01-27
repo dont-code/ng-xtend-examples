@@ -1,4 +1,4 @@
-import {Component, computed, inject, OnInit, signal} from '@angular/core';
+import {AfterViewInit, Component, computed, inject, linkedSignal, OnInit, signal} from '@angular/core';
 import {
   updateFormGroupWithValue,
   XtComponentOutput,
@@ -6,7 +6,7 @@ import {
   XtRenderComponent,
   XtResolverService
 } from 'xt-components';
-import {FormBuilder, ReactiveFormsModule} from '@angular/forms';
+import {FormBuilder, FormGroup, ReactiveFormsModule} from '@angular/forms';
 import {Card} from 'primeng/card';
 import {Button} from 'primeng/button';
 import {XtSignalStore, XtStoreManagerService} from 'xt-store';
@@ -33,7 +33,7 @@ import {ConfigManagerService} from '../config-manager/config-manager.service';
   templateUrl: './dynamic-display.html',
   styleUrl: './dynamic-display.css',
 })
-export class DynamicDisplay implements OnInit{
+export class DynamicDisplay implements OnInit,AfterViewInit{
 
   resolver = inject(XtResolverService);
   config=inject(ConfigManagerService);
@@ -44,8 +44,13 @@ export class DynamicDisplay implements OnInit{
 
   formBuilder = inject(FormBuilder);
 
-  bookForm= signal (this.formBuilder.group({
-  }));
+  bookForm= linkedSignal ( () => {
+    if (this.config.configLoaded()) {
+      return this.calculateBookForm();
+    }else {
+      return this.formBuilder.group({});
+    }
+  });
 
   // We use the ErrorHandlerService to display errors
   protected readonly errorHandler = inject(XtMessageHandler);
@@ -60,15 +65,15 @@ export class DynamicDisplay implements OnInit{
   ngOnInit(): void {
     // We fist load the data from the Store
     this.store = this.storeMgr.getStoreFor("Example Book");
-    this.store.fetchEntities().catch((error) => {
+  }
+
+  ngAfterViewInit(): void {
+    this.store!.fetchEntities().catch((error) => {
       this.errorHandler.errorOccurred(error, "Error loading Example Books ");
     }).finally(() => {
       console.log('Loading done.');
     });
-
-    this.updateBookForm();
   }
-
   /**
    * Called whenever the list component has some outputs.
    * One of it, valueSelected, contains the currently selected entity.
@@ -79,7 +84,7 @@ export class DynamicDisplay implements OnInit{
       // We listen to any change in the selection
       newValue?.valueSelected.subscribe (selected => {
         this.selectedEntity.set(selected);
-        this.updateBookForm();
+        this.bookForm.set(this.calculateBookForm());
         if (selected!=null)
           this.selectedEntityID=selected._id;
         else
@@ -97,7 +102,7 @@ export class DynamicDisplay implements OnInit{
     //this.elementsToDisplay.update (elements => elements.concat(newBook));
     this.selectedEntity.set(newBook);
     this.selectedEntityID=null;
-    this.updateBookForm();
+    this.bookForm.set(this.calculateBookForm());
   }
 
   protected saveBook() {
@@ -114,10 +119,11 @@ export class DynamicDisplay implements OnInit{
     });
   }
 
-  protected updateBookForm() {
+  protected calculateBookForm(): FormGroup {
     const newForm=this.formBuilder.group({});
     updateFormGroupWithValue(newForm, this.selectedEntity()??{}, 'Example Book', this.resolver.typeResolver );
-    this.bookForm.set(newForm);
+
+    return newForm;
   }
 
   protected reloadBooks() {
