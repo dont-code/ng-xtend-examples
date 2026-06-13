@@ -1,39 +1,141 @@
-# ![ng-xtend logo](public/logo.png) Dynamic plugin Example
+# ![ng-xtend logo](public/logo.png) Dynamic Plugin Example
 
-Same as store example, however the plugins are loaded dynamically from the web, instead of being bundled with the application.
-This allows to update the plugins without rebuilding the application.
+This example shows how to **load plugins at runtime** from a remote server using [Native Federation](https://github.com/angular-architects/module-federation-plugin/tree/main/libs/native-federation). Instead of bundling `xt-plugin-intl` and `xt-plugin-finance` with the application, they are fetched from a remote URL on startup.
 
-## What's included
-Same as the [store example](../store), with the addition of:
-- We remove the Finance and International plugins from the package (see `package.json`)
-- Native federation framework is added (see `package.json`)
-- Angular build is modified to support external modules loading through Federation (see `angular.json`)
-- Finance and International Plugins are loaded from internet (see `src/config-manager/config-manager.service.ts`)
+---
 
-## Development server
+## Step 1: Remove static plugin dependencies
 
-To start a local development server, run:
+Open [`package.json`](https://github.com/dont-code/ng-xtend-examples/blob/main/dynamic/package.json) and compare with the [store example](store.html) — the `xt-plugin-intl`, `xt-plugin-finance`, and `countries-ts` packages are **not** listed here. They will be loaded dynamically instead.
 
-```bash
-ng serve store
+The dynamic example adds:
+
+```json
+"dependencies": {
+  "@softarc/native-federation-runtime": "3.3.6",
+  "@angular-architects/native-federation": "20.1.7",
+  "es-module-shims": "2.6.2"
+}
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+These packages enable Module Federation at the application level, allowing the Angular build to import remote modules that were not present at compile time.
 
-## Building
+---
 
-To build the project run:
+## Step 2: Configure Native Federation
 
-```bash
-ng build
+[`federation.config.js`](https://github.com/dont-code/ng-xtend-examples/blob/main/dynamic/federation.config.js) tells the build system which libraries to share between the host and remote plugins:
+
+```javascript
+const { withNativeFederation, shareAll } = require('@angular-architects/native-federation/config');
+
+module.exports = withNativeFederation({
+  shared: {
+    ...shareAll({ singleton: true, strictVersion: true, requiredVersion: 'auto' }),
+  },
+  skip: ['chart.js/auto', 'primeng/chart', 'primeicons']
+});
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+`shareAll` ensures that Angular, ng-xtend libraries, and other core dependencies are loaded as **singletons** — the host and plugins share the same instance rather than each bundling their own copy. This is required for plugins to seamlessly integrate into the host's rendering pipeline.
 
-## Running unit tests
+---
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+## Step 3: Use `bootstrap.ts` for async initialisation
 
-```bash
-ng test
+Native Federation requires asynchronous bootstrapping because the remote plugin manifests must be fetched before Angular starts. The flow in [`src/main.ts`](https://github.com/dont-code/ng-xtend-examples/blob/main/dynamic/src/main.ts):
+
+```typescript
+import { initFederation } from '@angular-architects/native-federation';
+
+initFederation()
+  .catch(err => console.error(err))
+  .then(_ => import('./bootstrap'))
+  .catch(err => console.error(err));
 ```
+
+`initFederation()` fetches the remote federation manifests, then `bootstrap.ts` kicks off the regular Angular bootstrapping. This is the **only** structural change required — the rest of the application code is identical to the store example.
+
+---
+
+## Step 4: Load plugins dynamically
+
+In [`src/app/app.ts`](https://github.com/dont-code/ng-xtend-examples/blob/main/dynamic/src/app/app.ts), the default plugin is still registered statically (primitives must always be available), but the international and finance plugins are loaded at runtime:
+
+```typescript
+import {ConfigManagerService} from '../config-manager/config-manager.service';
+
+export class App {
+  protected readonly configService = inject(ConfigManagerService);
+
+  constructor() {
+    registerDefaultPlugin(this.resolverService);
+
+    this.configService.loadConfig(
+      [{
+        plugin: 'International Plugin',
+        url: 'https://test.dont-code.net/apps/latest/intl-plugin/remoteEntry.json'
+      }, {
+        plugin: 'Finance Plugin',
+        url: 'https://test.dont-code.net/apps/latest/finance-plugin/remoteEntry.json'
+      }],
+      {
+        buyType: { on: 'date', at: 'string', price: 'money-amount' },
+        'Example Book': {
+          bookName: 'string', author: 'string',
+          nationality: 'country', bought: 'buyType', read: 'boolean'
+        }
+      }
+    );
+  }
+}
+```
+
+**Why a `ConfigManagerService`?** The [`ConfigManagerService`](https://github.com/dont-code/ng-xtend-examples/blob/main/dynamic/src/config-manager/config-manager.service.ts) orchestrates loading order — plugins must be registered *before* types are declared, because type registration references plugin-provided type names like `'country'` and `'money-amount'`. If types were registered first, the resolver would fail to find components for those types.
+
+```typescript
+// Inside ConfigManagerService
+loadConfig(pluginConfig, types) {
+  this.loadPlugins(pluginConfig).then(() => {
+    this.resolverService.registerTypes(types);
+    this.configLoaded.set(true);
+  }).catch((err) => {
+    this.errorMsg.set(err.toString());
+  });
+}
+```
+
+---
+
+## Step 5: Handle loading state in the template
+
+Since plugins arrive asynchronously, the template ([`src/dynamic-display/dynamic-display.html`](https://github.com/dont-code/ng-xtend-examples/blob/main/dynamic/src/dynamic-display/dynamic-display.html)) has three states:
+
+```html
+@if (config.configLoaded()) {
+  <!-- Plugins loaded — render normally -->
+  <xt-render displayMode="LIST_VIEW" valueType="Example Book" ...>
+} @else if (config.errorMsg() != null) {
+  <!-- Plugin loading failed -->
+  <h2>Error loading plugins</h2>
+  <span>{{config.errorMsg()}}</span>
+} @else {
+  <!-- Still loading -->
+  <h2>Loading plugins...</h2>
+}
+```
+
+The `DynamicDisplay` component also uses `linkedSignal` for the form, so it only builds the form group once `configLoaded` is true.
+
+---
+
+## Summary
+
+| Concept | What changes |
+|---------|-------------|
+| **Native Federation** | Enables loading Angular modules (plugins) from remote URLs at runtime |
+| **`federation.config.js`** | Declares shared singleton dependencies between host and plugins |
+| **`initFederation()` + `bootstrap.ts`** | Async bootstrap required before Angular can start |
+| **`ConfigManagerService`** | Orchestrates plugin loading → type registration → UI readiness |
+| **Loading/error states** | Template handles the async lifecycle — loading, ready, or error |
+| **Plugin independence** | Remote plugins can be updated and deployed without rebuilding the host application |
