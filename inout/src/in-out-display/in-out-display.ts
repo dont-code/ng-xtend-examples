@@ -1,5 +1,5 @@
-import {Component, inject, OnInit, signal} from '@angular/core';
-import {updateFormGroupWithValue, XtComponentOutput, XtRenderComponent, XtResolverService} from 'xt-components';
+import {Component, effect, inject, model, OnInit, signal, untracked} from '@angular/core';
+import {updateFormGroupWithValue, XtRenderComponent, XtResolverService} from 'xt-components';
 import {FormBuilder, ReactiveFormsModule} from '@angular/forms';
 import {Card} from 'primeng/card';
 import {Button} from 'primeng/button';
@@ -33,32 +33,29 @@ export class InOutDisplay implements OnInit{
 
   selectedEntityIndex = -1;
 
+  valueSelectedModel = model<any>(null);
+
   formBuilder = inject(FormBuilder);
 
   bookForm= signal (this.formBuilder.group({
   }));
 
-  ngOnInit(): void {
-    this.updateBookForm();
-  }
-
-  /**
-   * Called whenever the list component has some outputs.
-   * One of it, valueSelected, contains the currently selected entity.
-   * @param newValue
-   */
-  outputChanged(newValue: XtComponentOutput | null) {
-    if (newValue?.valueSelected!=null) {
-      // We listen to any change in the selection
-      newValue?.valueSelected.subscribe (selected => {
+  constructor() {
+    effect(() => {
+      const selected = this.valueSelectedModel();
+      untracked(() => {
         this.selectedEntity.set(selected);
         this.updateBookForm();
-        if (selected!=null)
-          this.selectedEntityIndex=this.elementsToDisplay().indexOf(selected);
-        else
-          this.selectedEntityIndex=-1;
       });
-    }
+      if (selected!=null)
+        this.selectedEntityIndex = untracked(() => this.elementsToDisplay().indexOf(selected));
+      else
+        this.selectedEntityIndex=-1;
+    });
+  }
+
+  ngOnInit(): void {
+    this.updateBookForm();
   }
 
   protected cancelBook() {

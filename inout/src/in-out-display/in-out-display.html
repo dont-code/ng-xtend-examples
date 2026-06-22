@@ -1,5 +1,5 @@
 <h2>My Books</h2>
-<xt-render displayMode="LIST_VIEW" valueType="bookType" [value]="elementsToDisplay()" (outputs)="outputChanged($event)"> </xt-render>
+<xt-render displayMode="LIST_VIEW" valueType="bookType" [value]="elementsToDisplay()" [models]="{valueSelected: valueSelectedModel}"> </xt-render>
 
 <h2>Edit a Book</h2>
 <p-button label="Create" (onClick)="createBook()" />
