@@ -4,6 +4,7 @@ import {registerDefaultPlugin} from 'xt-plugin-default';
 import {XtResolverService} from 'xt-components';
 import {XtApiStoreProvider, XtStoreManagerService} from 'xt-store';
 import {ConfigManagerService} from '../config-manager/config-manager.service';
+import {loadRemoteModule} from '@softarc/native-federation-runtime';
 
 @Component({
   selector: 'app-root',
@@ -59,7 +60,11 @@ export class App {
   async loadPlugins (pluginInfos:Array<{plugin:string, url:string}>): Promise<void> {
       for (const pluginInfo of pluginInfos) {
         console.log(`Loading plugin ${pluginInfo.plugin} from ${pluginInfo.url}`);
-        await this.resolverService.loadPlugin(pluginInfo.url);
+        const module = await loadRemoteModule({
+          remoteEntry: pluginInfo.url,
+          exposedModule: './Register'
+        });
+        this.resolverService.registerPluginModule (module, pluginInfo.url);
       }
   }
 }

@@ -1,6 +1,7 @@
 import {inject, Injectable, signal} from '@angular/core';
 import {XtResolverService} from 'xt-components';
 import {XtTypeInfo} from 'xt-type';
+import {loadRemoteModule} from '@softarc/native-federation-runtime';
 
 @Injectable({
   providedIn: 'root',
@@ -28,7 +29,11 @@ export class ConfigManagerService {
   async loadPlugins(pluginInfos: Array<{ plugin: string, url: string }>): Promise<void> {
     for (const pluginInfo of pluginInfos) {
       console.log(`Loading plugin ${pluginInfo.plugin} from ${pluginInfo.url}`);
-      await this.resolverService.loadPlugin(pluginInfo.url);
+      const module = await loadRemoteModule({
+        remoteEntry: pluginInfo.url,
+        exposedModule: './Register'
+      });
+      this.resolverService.registerPluginModule (module, pluginInfo.url);
     }
 
   }

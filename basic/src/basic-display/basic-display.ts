@@ -1,5 +1,5 @@
 import {Component, inject, OnInit, signal} from '@angular/core';
-import {updateFormGroupWithValue, XtRenderComponent, XtResolverService} from 'xt-components';
+import {updateFormGroupWithValue, XtRenderComponent} from 'xt-components';
 import {FormBuilder, ReactiveFormsModule} from '@angular/forms';
 import {Card} from 'primeng/card';
 

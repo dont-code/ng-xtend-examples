@@ -3,10 +3,14 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { DynamicDisplay } from './dynamic-display';
 import {provideZonelessChangeDetection} from '@angular/core';
 import {provideAnimations} from '@angular/platform-browser/animations';
+import {registerDefaultPlugin} from 'xt-plugin-default';
+import {XtResolverService} from 'xt-components';
+import {StoreTestBed} from 'xt-store';
 
 describe('DynamicDisplay', () => {
   let component: DynamicDisplay;
   let fixture: ComponentFixture<DynamicDisplay>;
+  let resolverService: XtResolverService;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
@@ -15,6 +19,9 @@ describe('DynamicDisplay', () => {
     })
     .compileComponents();
 
+    resolverService=TestBed.inject(XtResolverService);
+    registerDefaultPlugin(resolverService);
+    StoreTestBed.ensureMemoryProviderOnly();
     fixture = TestBed.createComponent(DynamicDisplay);
     component = fixture.componentInstance;
     fixture.detectChanges();

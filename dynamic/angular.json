@@ -39,11 +39,12 @@
           }
         },
         "extract-i18n": {
-          "builder": "@angular-devkit/build-angular:extract-i18n"
+          "builder": "@angular/build:extract-i18n"
         },
         "esbuild": {
-          "builder": "@angular-devkit/build-angular:application",
+          "builder": "@angular/build:application",
           "options": {
+            "outputPath": "dist/dynamic",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "preserveSymlinks": true,
@@ -51,7 +52,6 @@
               "es-module-shims"
             ],
             "tsConfig": "tsconfig.app.json",
-            "inlineStyleLanguage": "css",
             "assets": [
               {
                 "glob": "**/*",
@@ -87,7 +87,7 @@
           "defaultConfiguration": "production"
         },
         "serve-original": {
-          "builder": "@angular-devkit/build-angular:dev-server",
+          "builder": "@angular/build:dev-server",
           "configurations": {
             "production": {
               "buildTarget": "dynamic:esbuild:production"
@@ -102,18 +102,9 @@
           }
         },
         "test": {
-          "builder": "@angular/build:karma",
+          "builder": "@angular/build:unit-test",
           "options": {
-            "tsConfig": "tsconfig.spec.json",
-            "assets": [
-              {
-                "glob": "**/*",
-                "input": "public"
-              }
-            ],
-            "styles": [
-              "src/styles.css"
-            ]
+            "tsConfig": "tsconfig.spec.json"
           }
         }
       }
