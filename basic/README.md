@@ -16,9 +16,9 @@ Open [`package.json`](https://github.com/dont-code/ng-xtend-examples/blob/main/b
 
 ```json
 "dependencies": {
-  "xt-components": "^0.6.4",
-  "xt-type": "^0.10.4",
-  "xt-plugin-default": "^0.6.4"
+  "xt-components": "^0.8.0",
+  "xt-type": "^0.11.0",
+  "xt-plugin-default": "^0.8.0"
 }
 ```
 

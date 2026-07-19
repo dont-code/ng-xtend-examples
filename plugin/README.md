@@ -10,9 +10,9 @@ Open [`package.json`](https://github.com/dont-code/ng-xtend-examples/blob/main/p
 
 ```json
 "dependencies": {
-  "xt-plugin-intl": "~0.6.4",
+  "xt-plugin-intl": "~0.8.0",
   "countries-ts": "~2.1.0",
-  "xt-plugin-finance": "~0.6.4"
+  "xt-plugin-finance": "~0.8.0"
 }
 ```
 

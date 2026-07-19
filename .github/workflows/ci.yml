@@ -1,0 +1,39 @@
+name: CI
+on:
+  push:
+jobs:
+  build:
+    env:
+      branch: 'main'
+      ELECTRON_EXTRA_LAUNCH_ARGS: '--disable-gpu'
+
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          ref: ${{ env.branch }}
+          token: ${{secrets.DONTCODE_ACTIONS_TOKEN}}
+          fetch-depth: 2
+      - name: Git config user
+        uses: snow-actions/git-config-user@v1.0.0
+        with:
+          name: Dont-code
+          email: developer@dont-code.net
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 24
+#      - name: Verify Change Logs
+#        run: node common/scripts/install-run-rush.js change --verify
+      - name: Rush Install
+        run: |
+          npm install -g pnpm@latest 
+          node common/scripts/install-run-rush.js install
+      - name: Rush rebuild
+        run: node common/scripts/install-run-rush.js rebuild
+      - name: Unit Tests
+        run: node common/scripts/install-run-rush.js test
+      - uses: actions/upload-artifact@v6
+        if: failure()
+        with:
+         name: test-logs
+         path: ./*/*/*.test*.log

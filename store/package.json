@@ -35,13 +35,13 @@
     "@primeuix/themes": "^2.0.3",
     "primeicons": "^7.0.0",
     "@softarc/native-federation-runtime": "^3.3.6",
-    "xt-components": "^0.7.0",
+    "xt-components": "^0.8.0",
     "xt-type": "^0.11.0",
-    "xt-plugin-default": "^0.7.0",
-    "xt-plugin-intl": "~0.7.0",
+    "xt-plugin-default": "^0.8.0",
+    "xt-plugin-intl": "~0.8.0",
     "countries-ts": "~2.1.0",
-    "xt-plugin-finance": "~0.7.0",
-    "xt-store": "~0.7.0",
+    "xt-plugin-finance": "~0.8.0",
+    "xt-store": "~0.8.0",
     "@ngrx/signals": "^21.1.1"
   },
   "devDependencies": {

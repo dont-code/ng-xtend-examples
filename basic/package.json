@@ -34,9 +34,9 @@
     "primeng": "^21.1.5",
     "@primeuix/themes": "^2.0.3",
     "primeicons": "^7.0.0",
-    "xt-components": "^0.7.0",
+    "xt-components": "^0.8.0",
     "xt-type": "^0.11.0",
-    "xt-plugin-default": "^0.7.0"
+    "xt-plugin-default": "^0.8.0"
   },
   "devDependencies": {
     "@angular/build": "^21.2.6",
