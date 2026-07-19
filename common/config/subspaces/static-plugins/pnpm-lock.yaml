@@ -61,20 +61,20 @@ importers:
         specifier: ^2.8.1
         version: 2.8.1
       xt-components:
-        specifier: ^0.7.0
-        version: 0.7.0(f01e5509c047b222520573842217bd73)
+        specifier: ^0.8.0
+        version: 0.8.3(f01e5509c047b222520573842217bd73)
       xt-plugin-default:
-        specifier: ^0.7.0
-        version: 0.7.0(@angular/common@21.2.17(@angular/core@21.2.17(@angular/compiler@21.2.17)(rxjs@7.8.2))(rxjs@7.8.2))(@angular/core@21.2.17(@angular/compiler@21.2.17)(rxjs@7.8.2))(xt-components@0.7.0(f01e5509c047b222520573842217bd73))
+        specifier: ^0.8.0
+        version: 0.8.3(@angular/common@21.2.17(@angular/core@21.2.17(@angular/compiler@21.2.17)(rxjs@7.8.2))(rxjs@7.8.2))(@angular/core@21.2.17(@angular/compiler@21.2.17)(rxjs@7.8.2))(xt-components@0.8.3(f01e5509c047b222520573842217bd73))
       xt-plugin-finance:
-        specifier: ~0.7.0
-        version: 0.7.0(37d02d8eb37f7e41a162d3efd00fe708)
+        specifier: ~0.8.0
+        version: 0.8.3(c493ad5d804bfab73a6b2f7d93d23b80)
       xt-plugin-intl:
-        specifier: ~0.7.0
-        version: 0.7.0(37d02d8eb37f7e41a162d3efd00fe708)
+        specifier: ~0.8.0
+        version: 0.8.3(c493ad5d804bfab73a6b2f7d93d23b80)
       xt-store:
-        specifier: ~0.7.0
-        version: 0.7.0(@angular/common@21.2.17(@angular/core@21.2.17(@angular/compiler@21.2.17)(rxjs@7.8.2))(rxjs@7.8.2))(@angular/core@21.2.17(@angular/compiler@21.2.17)(rxjs@7.8.2))(xt-type@0.11.0)
+        specifier: ~0.8.0
+        version: 0.8.3(@angular/common@21.2.17(@angular/core@21.2.17(@angular/compiler@21.2.17)(rxjs@7.8.2))(rxjs@7.8.2))(@angular/core@21.2.17(@angular/compiler@21.2.17)(rxjs@7.8.2))(xt-type@0.11.0)
       xt-type:
         specifier: ^0.11.0
         version: 0.11.0
@@ -146,11 +146,11 @@ importers:
         specifier: ^2.8.1
         version: 2.8.1
       xt-components:
-        specifier: ^0.7.0
-        version: 0.7.0(f01e5509c047b222520573842217bd73)
+        specifier: ^0.8.0
+        version: 0.8.3(f01e5509c047b222520573842217bd73)
       xt-plugin-default:
-        specifier: ^0.7.0
-        version: 0.7.0(@angular/common@21.2.17(@angular/core@21.2.17(@angular/compiler@21.2.17)(rxjs@7.8.2))(rxjs@7.8.2))(@angular/core@21.2.17(@angular/compiler@21.2.17)(rxjs@7.8.2))(xt-components@0.7.0(f01e5509c047b222520573842217bd73))
+        specifier: ^0.8.0
+        version: 0.8.3(@angular/common@21.2.17(@angular/core@21.2.17(@angular/compiler@21.2.17)(rxjs@7.8.2))(rxjs@7.8.2))(@angular/core@21.2.17(@angular/compiler@21.2.17)(rxjs@7.8.2))(xt-components@0.8.3(f01e5509c047b222520573842217bd73))
       xt-type:
         specifier: ^0.11.0
         version: 0.11.0
@@ -228,17 +228,17 @@ importers:
         specifier: ^2.8.1
         version: 2.8.1
       xt-components:
-        specifier: ^0.7.0
-        version: 0.7.0(f01e5509c047b222520573842217bd73)
+        specifier: ^0.8.0
+        version: 0.8.3(f01e5509c047b222520573842217bd73)
       xt-plugin-default:
-        specifier: ^0.7.0
-        version: 0.7.0(@angular/common@21.2.17(@angular/core@21.2.17(@angular/compiler@21.2.17)(rxjs@7.8.2))(rxjs@7.8.2))(@angular/core@21.2.17(@angular/compiler@21.2.17)(rxjs@7.8.2))(xt-components@0.7.0(f01e5509c047b222520573842217bd73))
+        specifier: ^0.8.0
+        version: 0.8.3(@angular/common@21.2.17(@angular/core@21.2.17(@angular/compiler@21.2.17)(rxjs@7.8.2))(rxjs@7.8.2))(@angular/core@21.2.17(@angular/compiler@21.2.17)(rxjs@7.8.2))(xt-components@0.8.3(f01e5509c047b222520573842217bd73))
       xt-plugin-finance:
-        specifier: ~0.7.0
-        version: 0.7.0(37d02d8eb37f7e41a162d3efd00fe708)
+        specifier: ~0.8.0
+        version: 0.8.3(c493ad5d804bfab73a6b2f7d93d23b80)
       xt-plugin-intl:
-        specifier: ~0.7.0
-        version: 0.7.0(37d02d8eb37f7e41a162d3efd00fe708)
+        specifier: ~0.8.0
+        version: 0.8.3(c493ad5d804bfab73a6b2f7d93d23b80)
       xt-type:
         specifier: ^0.11.0
         version: 0.11.0
@@ -319,17 +319,17 @@ importers:
         specifier: ^2.8.1
         version: 2.8.1
       xt-components:
-        specifier: ^0.7.0
-        version: 0.7.0(f01e5509c047b222520573842217bd73)
+        specifier: ^0.8.0
+        version: 0.8.3(f01e5509c047b222520573842217bd73)
       xt-plugin-default:
-        specifier: ^0.7.0
-        version: 0.7.0(@angular/common@21.2.17(@angular/core@21.2.17(@angular/compiler@21.2.17)(rxjs@7.8.2))(rxjs@7.8.2))(@angular/core@21.2.17(@angular/compiler@21.2.17)(rxjs@7.8.2))(xt-components@0.7.0(f01e5509c047b222520573842217bd73))
+        specifier: ^0.8.0
+        version: 0.8.3(@angular/common@21.2.17(@angular/core@21.2.17(@angular/compiler@21.2.17)(rxjs@7.8.2))(rxjs@7.8.2))(@angular/core@21.2.17(@angular/compiler@21.2.17)(rxjs@7.8.2))(xt-components@0.8.3(f01e5509c047b222520573842217bd73))
       xt-plugin-finance:
-        specifier: ~0.7.0
-        version: 0.7.0(37d02d8eb37f7e41a162d3efd00fe708)
+        specifier: ~0.8.0
+        version: 0.8.3(c493ad5d804bfab73a6b2f7d93d23b80)
       xt-plugin-intl:
-        specifier: ~0.7.0
-        version: 0.7.0(37d02d8eb37f7e41a162d3efd00fe708)
+        specifier: ~0.8.0
+        version: 0.8.3(c493ad5d804bfab73a6b2f7d93d23b80)
       xt-type:
         specifier: ^0.11.0
         version: 0.11.0
@@ -413,20 +413,20 @@ importers:
         specifier: ^2.8.1
         version: 2.8.1
       xt-components:
-        specifier: ^0.7.0
-        version: 0.7.0(f01e5509c047b222520573842217bd73)
+        specifier: ^0.8.0
+        version: 0.8.3(f01e5509c047b222520573842217bd73)
       xt-plugin-default:
-        specifier: ^0.7.0
-        version: 0.7.0(@angular/common@21.2.17(@angular/core@21.2.17(@angular/compiler@21.2.17)(rxjs@7.8.2))(rxjs@7.8.2))(@angular/core@21.2.17(@angular/compiler@21.2.17)(rxjs@7.8.2))(xt-components@0.7.0(f01e5509c047b222520573842217bd73))
+        specifier: ^0.8.0
+        version: 0.8.3(@angular/common@21.2.17(@angular/core@21.2.17(@angular/compiler@21.2.17)(rxjs@7.8.2))(rxjs@7.8.2))(@angular/core@21.2.17(@angular/compiler@21.2.17)(rxjs@7.8.2))(xt-components@0.8.3(f01e5509c047b222520573842217bd73))
       xt-plugin-finance:
-        specifier: ~0.7.0
-        version: 0.7.0(37d02d8eb37f7e41a162d3efd00fe708)
+        specifier: ~0.8.0
+        version: 0.8.3(c493ad5d804bfab73a6b2f7d93d23b80)
       xt-plugin-intl:
-        specifier: ~0.7.0
-        version: 0.7.0(37d02d8eb37f7e41a162d3efd00fe708)
+        specifier: ~0.8.0
+        version: 0.8.3(c493ad5d804bfab73a6b2f7d93d23b80)
       xt-store:
-        specifier: ~0.7.0
-        version: 0.7.0(@angular/common@21.2.17(@angular/core@21.2.17(@angular/compiler@21.2.17)(rxjs@7.8.2))(rxjs@7.8.2))(@angular/core@21.2.17(@angular/compiler@21.2.17)(rxjs@7.8.2))(xt-type@0.11.0)
+        specifier: ~0.8.0
+        version: 0.8.3(@angular/common@21.2.17(@angular/core@21.2.17(@angular/compiler@21.2.17)(rxjs@7.8.2))(rxjs@7.8.2))(@angular/core@21.2.17(@angular/compiler@21.2.17)(rxjs@7.8.2))(xt-type@0.11.0)
       xt-type:
         specifier: ^0.11.0
         version: 0.11.0
@@ -504,11 +504,11 @@ importers:
         specifier: ^2.8.1
         version: 2.8.1
       xt-components:
-        specifier: ^0.7.0
-        version: 0.7.0(f01e5509c047b222520573842217bd73)
+        specifier: ^0.8.0
+        version: 0.8.3(f01e5509c047b222520573842217bd73)
       xt-plugin-default:
-        specifier: ^0.7.0
-        version: 0.7.0(@angular/common@21.2.17(@angular/core@21.2.17(@angular/compiler@21.2.17)(rxjs@7.8.2))(rxjs@7.8.2))(@angular/core@21.2.17(@angular/compiler@21.2.17)(rxjs@7.8.2))(xt-components@0.7.0(f01e5509c047b222520573842217bd73))
+        specifier: ^0.8.0
+        version: 0.8.3(@angular/common@21.2.17(@angular/core@21.2.17(@angular/compiler@21.2.17)(rxjs@7.8.2))(rxjs@7.8.2))(@angular/core@21.2.17(@angular/compiler@21.2.17)(rxjs@7.8.2))(xt-components@0.8.3(f01e5509c047b222520573842217bd73))
       xt-type:
         specifier: ^0.11.0
         version: 0.11.0
@@ -5723,8 +5723,8 @@ packages:
   xmlchars@2.2.0:
     resolution: {integrity: sha512-JZnDKK8B0RCDw84FNdDAIpZK+JuJw+s7Lz8nksI7SIuU3UXJJslUthsi+uWBUYOwPFwW7W7PRLRfUKpxjtjFCw==}
 
-  xt-components@0.7.0:
-    resolution: {integrity: sha512-5oHR49TpW8uCyNOqiNQWnoYIHW13tg9EX9UVQaVt3fdwAHl8PSG/+9KMKzxgyhqjYD6qtN4LdijL64fKkjdEMQ==}
+  xt-components@0.8.3:
+    resolution: {integrity: sha512-iRtUIA53vsG7i8L72wY0uY3/PQBtnLtd212gHsZ3VIgVJxo3EG9ZQHT8GWGvwG8JpeyXJIZhD9fzbUNfFOXD1Q==}
     peerDependencies:
       '@angular/animations': ^21.0.0
       '@angular/common': ^21.0.0
@@ -5739,15 +5739,15 @@ packages:
       rxjs: ~7.8.2
       xt-type: '>= 0.10.4'
 
-  xt-plugin-default@0.7.0:
-    resolution: {integrity: sha512-W6yy9EWQpSMOt9DBNShSTgjBzqmlv3Q8+7Bpw0ooTqeDTzCc/aH+bRepwreq8Q5zxUNZEtKWjTt0D0hfmaMUOw==}
+  xt-plugin-default@0.8.3:
+    resolution: {integrity: sha512-JvHUtwxB13LmJe2qiJFz0zzAvNGv4hODp6Pkj/l6lWHMaLS0irzCTwyjiqMNj0wWqq8oNcxEILCbN5aGXLKLRg==}
     peerDependencies:
       '@angular/common': ^21.0.0
       '@angular/core': ^21.0.0
-      xt-components: '>= 0.7.0'
+      xt-components: '>= 0.8.0'
 
-  xt-plugin-finance@0.7.0:
-    resolution: {integrity: sha512-X5rMP6o/o+xN1arBaalKW2kTOvtDJ0dTf6jEF8ySOIBWVx6vAjc5ZKfo1ljUrtr9iTTRGpyyijO+F471ZsY19w==}
+  xt-plugin-finance@0.8.3:
+    resolution: {integrity: sha512-pJ1ha5hLFT2kHZ7oVn5H1K/p+K2aknqdxJPeKMIsL4RtsLNqej2A5qTzON3ewE4Ty2KoAAjrg2xA1e5BGNmVmA==}
     peerDependencies:
       '@angular/animations': ^21.0.0
       '@angular/common': ^21.0.0
@@ -5760,10 +5760,10 @@ packages:
       primeicons: ^7.0.0
       primeng: ^21.0.0
       rxjs: ^7.8.0
-      xt-components: '>= 0.7.0'
+      xt-components: '>= 0.8.0'
 
-  xt-plugin-intl@0.7.0:
-    resolution: {integrity: sha512-dzN621jzPMIiaHSvnnm+Ieonf8nWujQeHsEAsd96PS578IFrh07zNxsLxbdLzhoWVmde4gC5kftopnRqlDzJZA==}
+  xt-plugin-intl@0.8.3:
+    resolution: {integrity: sha512-M3XEkgCU05VE9pXGfwOn7yd4lLYc/vhiN3FJ4RI1MzvVZMCfp+av9HXUl6u9JjEJ8Se/avV2PLjy4DFhvRHH+w==}
     peerDependencies:
       '@angular/animations': ^21.0.0
       '@angular/common': ^21.0.0
@@ -5776,14 +5776,14 @@ packages:
       primeicons: ^7.0.0
       primeng: ^21.0.0
       rxjs: ^7.8.0
-      xt-components: '>= 0.7.0'
+      xt-components: '>= 0.8.0'
 
-  xt-store@0.7.0:
-    resolution: {integrity: sha512-/gNH9ZjMqCtlj99jjCgWWIzOQscm0GS4KuvytcyCaMisXWvKNV8iQ2w/YmHuz8AyL6vZdGM1MsPucXAev/HLeg==}
+  xt-store@0.8.3:
+    resolution: {integrity: sha512-GpEYzOwspEZYkC86QxyucpY+P0HBx891pTQAquXHjPX8yMNHctKIHD5TKwvI0WWU1DRvc5DJ9TsA49T/1LOImg==}
     peerDependencies:
       '@angular/common': ^21.0.0
-      '@angular/core': ^20.0.0
-      xt-type: '>= 0.10.4'
+      '@angular/core': ^21.0.0
+      xt-type: '>= 0.11.0'
 
   xt-type@0.11.0:
     resolution: {integrity: sha512-ElCYQTbmW7GvbndlvYD+gMSBINPdN+c/0i9p25q5A8FOvGnjnI7pK7mF6E9ZXTi9kpHXUJcRhI/duGkJ5KiQMA==}
@@ -11291,7 +11291,7 @@ snapshots:
 
   xmlchars@2.2.0: {}
 
-  xt-components@0.7.0(f01e5509c047b222520573842217bd73):
+  xt-components@0.8.3(f01e5509c047b222520573842217bd73):
     dependencies:
       '@angular/animations': 21.2.17(@angular/core@21.2.17(@angular/compiler@21.2.17)(rxjs@7.8.2))
       '@angular/common': 21.2.17(@angular/core@21.2.17(@angular/compiler@21.2.17)(rxjs@7.8.2))(rxjs@7.8.2)
@@ -11307,30 +11307,14 @@ snapshots:
       tslib: 2.8.1
       xt-type: 0.11.0
 
-  xt-plugin-default@0.7.0(@angular/common@21.2.17(@angular/core@21.2.17(@angular/compiler@21.2.17)(rxjs@7.8.2))(rxjs@7.8.2))(@angular/core@21.2.17(@angular/compiler@21.2.17)(rxjs@7.8.2))(xt-components@0.7.0(f01e5509c047b222520573842217bd73)):
+  xt-plugin-default@0.8.3(@angular/common@21.2.17(@angular/core@21.2.17(@angular/compiler@21.2.17)(rxjs@7.8.2))(rxjs@7.8.2))(@angular/core@21.2.17(@angular/compiler@21.2.17)(rxjs@7.8.2))(xt-components@0.8.3(f01e5509c047b222520573842217bd73)):
     dependencies:
       '@angular/common': 21.2.17(@angular/core@21.2.17(@angular/compiler@21.2.17)(rxjs@7.8.2))(rxjs@7.8.2)
       '@angular/core': 21.2.17(@angular/compiler@21.2.17)(rxjs@7.8.2)
       tslib: 2.8.1
-      xt-components: 0.7.0(f01e5509c047b222520573842217bd73)
+      xt-components: 0.8.3(f01e5509c047b222520573842217bd73)
 
-  xt-plugin-finance@0.7.0(37d02d8eb37f7e41a162d3efd00fe708):
-    dependencies:
-      '@angular/animations': 21.2.17(@angular/core@21.2.17(@angular/compiler@21.2.17)(rxjs@7.8.2))
-      '@angular/common': 21.2.17(@angular/core@21.2.17(@angular/compiler@21.2.17)(rxjs@7.8.2))(rxjs@7.8.2)
-      '@angular/compiler': 21.2.17
-      '@angular/core': 21.2.17(@angular/compiler@21.2.17)(rxjs@7.8.2)
-      '@angular/forms': 21.2.17(@angular/common@21.2.17(@angular/core@21.2.17(@angular/compiler@21.2.17)(rxjs@7.8.2))(rxjs@7.8.2))(@angular/core@21.2.17(@angular/compiler@21.2.17)(rxjs@7.8.2))(@angular/platform-browser@21.2.17(@angular/animations@21.2.17(@angular/core@21.2.17(@angular/compiler@21.2.17)(rxjs@7.8.2)))(@angular/common@21.2.17(@angular/core@21.2.17(@angular/compiler@21.2.17)(rxjs@7.8.2))(rxjs@7.8.2))(@angular/core@21.2.17(@angular/compiler@21.2.17)(rxjs@7.8.2)))(rxjs@7.8.2)
-      '@angular/platform-browser': 21.2.17(@angular/animations@21.2.17(@angular/core@21.2.17(@angular/compiler@21.2.17)(rxjs@7.8.2)))(@angular/common@21.2.17(@angular/core@21.2.17(@angular/compiler@21.2.17)(rxjs@7.8.2))(rxjs@7.8.2))(@angular/core@21.2.17(@angular/compiler@21.2.17)(rxjs@7.8.2))
-      '@angular/platform-browser-dynamic': 21.2.17(@angular/common@21.2.17(@angular/core@21.2.17(@angular/compiler@21.2.17)(rxjs@7.8.2))(rxjs@7.8.2))(@angular/compiler@21.2.17)(@angular/core@21.2.17(@angular/compiler@21.2.17)(rxjs@7.8.2))(@angular/platform-browser@21.2.17(@angular/animations@21.2.17(@angular/core@21.2.17(@angular/compiler@21.2.17)(rxjs@7.8.2)))(@angular/common@21.2.17(@angular/core@21.2.17(@angular/compiler@21.2.17)(rxjs@7.8.2))(rxjs@7.8.2))(@angular/core@21.2.17(@angular/compiler@21.2.17)(rxjs@7.8.2)))
-      '@angular/router': 21.2.17(@angular/common@21.2.17(@angular/core@21.2.17(@angular/compiler@21.2.17)(rxjs@7.8.2))(rxjs@7.8.2))(@angular/core@21.2.17(@angular/compiler@21.2.17)(rxjs@7.8.2))(@angular/platform-browser@21.2.17(@angular/animations@21.2.17(@angular/core@21.2.17(@angular/compiler@21.2.17)(rxjs@7.8.2)))(@angular/common@21.2.17(@angular/core@21.2.17(@angular/compiler@21.2.17)(rxjs@7.8.2))(rxjs@7.8.2))(@angular/core@21.2.17(@angular/compiler@21.2.17)(rxjs@7.8.2)))(rxjs@7.8.2)
-      primeicons: 7.0.0
-      primeng: 21.1.9(0f5dfc65efdaef4cb733061ef7450cd1)
-      rxjs: 7.8.2
-      tslib: 2.8.1
-      xt-components: 0.7.0(f01e5509c047b222520573842217bd73)
-
-  xt-plugin-intl@0.7.0(37d02d8eb37f7e41a162d3efd00fe708):
+  xt-plugin-finance@0.8.3(c493ad5d804bfab73a6b2f7d93d23b80):
     dependencies:
       '@angular/animations': 21.2.17(@angular/core@21.2.17(@angular/compiler@21.2.17)(rxjs@7.8.2))
       '@angular/common': 21.2.17(@angular/core@21.2.17(@angular/compiler@21.2.17)(rxjs@7.8.2))(rxjs@7.8.2)
@@ -11344,9 +11328,25 @@ snapshots:
       primeng: 21.1.9(0f5dfc65efdaef4cb733061ef7450cd1)
       rxjs: 7.8.2
       tslib: 2.8.1
-      xt-components: 0.7.0(f01e5509c047b222520573842217bd73)
+      xt-components: 0.8.3(f01e5509c047b222520573842217bd73)
 
-  xt-store@0.7.0(@angular/common@21.2.17(@angular/core@21.2.17(@angular/compiler@21.2.17)(rxjs@7.8.2))(rxjs@7.8.2))(@angular/core@21.2.17(@angular/compiler@21.2.17)(rxjs@7.8.2))(xt-type@0.11.0):
+  xt-plugin-intl@0.8.3(c493ad5d804bfab73a6b2f7d93d23b80):
+    dependencies:
+      '@angular/animations': 21.2.17(@angular/core@21.2.17(@angular/compiler@21.2.17)(rxjs@7.8.2))
+      '@angular/common': 21.2.17(@angular/core@21.2.17(@angular/compiler@21.2.17)(rxjs@7.8.2))(rxjs@7.8.2)
+      '@angular/compiler': 21.2.17
+      '@angular/core': 21.2.17(@angular/compiler@21.2.17)(rxjs@7.8.2)
+      '@angular/forms': 21.2.17(@angular/common@21.2.17(@angular/core@21.2.17(@angular/compiler@21.2.17)(rxjs@7.8.2))(rxjs@7.8.2))(@angular/core@21.2.17(@angular/compiler@21.2.17)(rxjs@7.8.2))(@angular/platform-browser@21.2.17(@angular/animations@21.2.17(@angular/core@21.2.17(@angular/compiler@21.2.17)(rxjs@7.8.2)))(@angular/common@21.2.17(@angular/core@21.2.17(@angular/compiler@21.2.17)(rxjs@7.8.2))(rxjs@7.8.2))(@angular/core@21.2.17(@angular/compiler@21.2.17)(rxjs@7.8.2)))(rxjs@7.8.2)
+      '@angular/platform-browser': 21.2.17(@angular/animations@21.2.17(@angular/core@21.2.17(@angular/compiler@21.2.17)(rxjs@7.8.2)))(@angular/common@21.2.17(@angular/core@21.2.17(@angular/compiler@21.2.17)(rxjs@7.8.2))(rxjs@7.8.2))(@angular/core@21.2.17(@angular/compiler@21.2.17)(rxjs@7.8.2))
+      '@angular/platform-browser-dynamic': 21.2.17(@angular/common@21.2.17(@angular/core@21.2.17(@angular/compiler@21.2.17)(rxjs@7.8.2))(rxjs@7.8.2))(@angular/compiler@21.2.17)(@angular/core@21.2.17(@angular/compiler@21.2.17)(rxjs@7.8.2))(@angular/platform-browser@21.2.17(@angular/animations@21.2.17(@angular/core@21.2.17(@angular/compiler@21.2.17)(rxjs@7.8.2)))(@angular/common@21.2.17(@angular/core@21.2.17(@angular/compiler@21.2.17)(rxjs@7.8.2))(rxjs@7.8.2))(@angular/core@21.2.17(@angular/compiler@21.2.17)(rxjs@7.8.2)))
+      '@angular/router': 21.2.17(@angular/common@21.2.17(@angular/core@21.2.17(@angular/compiler@21.2.17)(rxjs@7.8.2))(rxjs@7.8.2))(@angular/core@21.2.17(@angular/compiler@21.2.17)(rxjs@7.8.2))(@angular/platform-browser@21.2.17(@angular/animations@21.2.17(@angular/core@21.2.17(@angular/compiler@21.2.17)(rxjs@7.8.2)))(@angular/common@21.2.17(@angular/core@21.2.17(@angular/compiler@21.2.17)(rxjs@7.8.2))(rxjs@7.8.2))(@angular/core@21.2.17(@angular/compiler@21.2.17)(rxjs@7.8.2)))(rxjs@7.8.2)
+      primeicons: 7.0.0
+      primeng: 21.1.9(0f5dfc65efdaef4cb733061ef7450cd1)
+      rxjs: 7.8.2
+      tslib: 2.8.1
+      xt-components: 0.8.3(f01e5509c047b222520573842217bd73)
+
+  xt-store@0.8.3(@angular/common@21.2.17(@angular/core@21.2.17(@angular/compiler@21.2.17)(rxjs@7.8.2))(rxjs@7.8.2))(@angular/core@21.2.17(@angular/compiler@21.2.17)(rxjs@7.8.2))(xt-type@0.11.0):
     dependencies:
       '@angular/common': 21.2.17(@angular/core@21.2.17(@angular/compiler@21.2.17)(rxjs@7.8.2))(rxjs@7.8.2)
       '@angular/core': 21.2.17(@angular/compiler@21.2.17)(rxjs@7.8.2)
