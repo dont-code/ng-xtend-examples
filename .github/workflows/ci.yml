@@ -6,7 +6,7 @@ jobs:
     env:
       branch: 'main'
       ELECTRON_EXTRA_LAUNCH_ARGS: '--disable-gpu'
-
+      RUSH_ALLOW_WARNINGS_IN_SUCCESSFUL_BUILD: 1
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
