@@ -7,8 +7,8 @@ import {
   XtResolverService
 } from 'xt-components';
 import {FormBuilder, FormGroup, ReactiveFormsModule} from '@angular/forms';
-import {Card} from 'primeng/card';
-import {Button} from 'primeng/button';
+import {Card} from '@openng/optimus-ui/card';
+import {Button} from '@openng/optimus-ui/button';
 import {XtSignalStore, XtStoreManagerService} from 'xt-store';
 import {ManagedData} from 'xt-type';
 import {ConfigManagerService} from '../config-manager/config-manager.service';

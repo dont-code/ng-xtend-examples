@@ -1,8 +1,8 @@
 import {Component, effect, inject, model, OnInit, signal, untracked} from '@angular/core';
 import {updateFormGroupWithValue, XtRenderComponent, XtResolverService} from 'xt-components';
 import {FormBuilder, ReactiveFormsModule} from '@angular/forms';
-import {Card} from 'primeng/card';
-import {Button} from 'primeng/button';
+import {Card} from '@openng/optimus-ui/card';
+import {Button} from '@openng/optimus-ui/button';
 
 /**
  * We just display a static value (elementToDisplay) 3 times:

@@ -2,7 +2,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { BasicDisplay } from './basic-display';
 import {provideZonelessChangeDetection} from '@angular/core';
-import {provideAnimations} from '@angular/platform-browser/animations';
+import {provideAnimationsAsync} from '@angular/platform-browser/animations/async';
 import {registerDefaultPlugin} from 'xt-plugin-default';
 import {XtResolverService} from 'xt-components';
 
@@ -14,7 +14,7 @@ describe('BasicDisplay', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [BasicDisplay],
-      providers: [provideZonelessChangeDetection(), provideAnimations()]
+      providers: [provideZonelessChangeDetection(), provideAnimationsAsync()]
     })
     .compileComponents();
 

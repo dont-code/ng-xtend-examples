@@ -16,9 +16,9 @@ Open [`package.json`](https://github.com/dont-code/ng-xtend-examples/blob/main/b
 
 ```json
 "dependencies": {
-  "xt-components": "^0.8.0",
+  "xt-components": "^1.5.0",
   "xt-type": "^0.11.0",
-  "xt-plugin-default": "^0.8.0"
+  "xt-plugin-default": "^1.5.0"
 }
 ```
 
@@ -99,7 +99,7 @@ Keep the same value but switch to `displayMode="FULL_VIEW"`:
 </p-card>
 ```
 
-**What happens:** The resolver picks the same object renderer but uses a different layout — each property is displayed in a **labeled row**, one per line, suitable for a detail view. Wrapping it in `<p-card>` (from PrimeNG) adds a visual container.
+**What happens:** The resolver picks the same object renderer but uses a different layout — each property is displayed in a **labeled row**, one per line, suitable for a detail view. Wrapping it in `<p-card>` (from Optimus UI) adds a visual container.
 
 **Why FULL_VIEW over LIST_VIEW?** `FULL_VIEW` is meant for reading the full object. It's more spacious, labels are more prominent, and nested objects are expanded rather than tiled.
 

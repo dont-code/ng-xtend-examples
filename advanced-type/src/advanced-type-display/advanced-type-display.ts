@@ -7,8 +7,8 @@ import {
   XtResolverService
 } from 'xt-components';
 import {FormBuilder, ReactiveFormsModule} from '@angular/forms';
-import {Card} from 'primeng/card';
-import {Button} from 'primeng/button';
+import {Card} from '@openng/optimus-ui/card';
+import {Button} from '@openng/optimus-ui/button';
 import {XtSignalStore, XtStoreManagerService} from 'xt-store';
 import {Author, Book} from '../model/types';
 
