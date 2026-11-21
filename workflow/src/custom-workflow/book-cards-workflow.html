@@ -1,0 +1,34 @@
+<div class="workflow-toolbar">
+  <input
+    type="search"
+    placeholder="Search books"
+    aria-label="Search books"
+    [value]="search()"
+    (input)="onSearchInput($event)">
+  <p-button label="Reload" (onClick)="reload()" />
+  <p-button label="Add sample book" (onClick)="addSample()" />
+</div>
+
+@if (updating() || store?.loading()) {
+  <p class="workflow-status">Loading {{ entityName() }}…</p>
+}
+
+<div class="book-grid">
+  @for (book of searchedElements(); track book._id ?? $index) {
+    <p-card styleClass="book-card">
+      <xt-render displayMode="FULL_VIEW" valueType="Example Book" [value]="book" />
+      <div class="card-actions">
+        <p-button
+          label="Delete"
+          severity="danger"
+          [outlined]="true"
+          [disabled]="book._id == null"
+          (onClick)="deleteBook(book)" />
+      </div>
+    </p-card>
+  } @empty {
+    @if (!updating() && !store?.loading()) {
+      <p class="workflow-status">No books found. Add a sample book to populate the store.</p>
+    }
+  }
+</div>

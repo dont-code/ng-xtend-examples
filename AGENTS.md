@@ -17,6 +17,7 @@
 | `inout/` | List selection connected to editor via inputs/outputs |
 | `store/` | Persistent storage with xt-store via REST API |
 | `advanced-type/` | Relations (many-to-one, one-to-many) with stores |
+| `workflow/` | Custom statically registered workflow component backed by `xt-store` |
 | `dynamic/` | Dynamic plugin loading at runtime from remote server |
 
 ## Package Versions (Angular 22 / Optimus UI)
@@ -31,6 +32,7 @@
 | `@openng/optimus-ui-themes` | 2.0.2 | pinned |
 | `primeicons` | 7.0.0 | pinned |
 | `xt-components` | 1.5.0 | `^` |
+| `dc-workflow` | 1.5.0 | `^` |
 | `xt-type` | 0.13.0 | `^` |
 | `xt-plugin-default` | 1.5.0 | `^` |
 | `xt-plugin-intl` | 1.5.0 | `~` |
@@ -50,6 +52,7 @@
 - `providePrimeNG` was replaced by `provideOptimus` from `@openng/optimus-ui/config`.
 - `provideAnimations` was replaced by `provideAnimationsAsync` from `@angular/platform-browser/animations/async`.
 - Native Federation configs now use `fromPackageJson(...).patch(...)` with `denseExternals: true`.
+- `workflow/` registers a custom `AbstractDcWorkflow` with `XtResolverService.registerPlugin()`; it is static and has no federation dependencies.
 - Production bundle budgets were raised to 2 MB warning / 3 MB error for the larger Optimus UI bundles.
 - Stale per-project `package-lock.json` files were removed; Rush/pnpm lockfiles under `common/config` are authoritative.
 - README files in basic/, plugin/, store/, and dynamic/ were updated with the new versions and skip list.
