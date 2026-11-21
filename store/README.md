@@ -10,7 +10,7 @@ Open [`package.json`](https://github.com/dont-code/ng-xtend-examples/blob/main/s
 
 ```json
 "dependencies": {
-  "xt-store": "~0.8.0",
+  "xt-store": "~1.5.0",
   "@ngrx/signals": "^20.1.0"
 }
 ```

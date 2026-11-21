@@ -2,7 +2,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { StoreDisplay } from './store-display';
 import {provideZonelessChangeDetection} from '@angular/core';
-import {provideAnimations} from '@angular/platform-browser/animations';
+import {provideAnimationsAsync} from '@angular/platform-browser/animations/async';
 import {registerDefaultPlugin} from 'xt-plugin-default';
 import {XtResolverService} from 'xt-components';
 import {StoreTestBed} from 'xt-store';
@@ -15,7 +15,7 @@ describe('StoreDisplay', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [StoreDisplay],
-      providers: [provideZonelessChangeDetection(), provideAnimations()]
+      providers: [provideZonelessChangeDetection(), provideAnimationsAsync()]
     })
     .compileComponents();
 

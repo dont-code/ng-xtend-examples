@@ -10,16 +10,16 @@ Open [`package.json`](https://github.com/dont-code/ng-xtend-examples/blob/main/p
 
 ```json
 "dependencies": {
-  "xt-plugin-intl": "~0.8.0",
-  "countries-ts": "~2.1.0",
-  "xt-plugin-finance": "~0.8.0"
+  "xt-plugin-intl": "~1.5.0",
+  "world-countries": "5.0.0",
+  "xt-plugin-finance": "~1.5.0"
 }
 ```
 
 | Package | Provides |
 |---------|----------|
 | `xt-plugin-intl` | A plugin that renders `country` fields with a flag+name dropdown |
-| `countries-ts` | Country data used by the intl plugin |
+| `world-countries` | Country data used by the intl plugin |
 | `xt-plugin-finance` | A plugin that renders `money-amount` fields with currency symbol, formatted number, and a currency selector |
 
 ---

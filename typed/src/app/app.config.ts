@@ -2,17 +2,17 @@ import { ApplicationConfig, provideBrowserGlobalErrorListeners, provideZonelessC
 import { provideRouter } from '@angular/router';
 
 import { routes } from './app.routes';
-import {provideAnimations} from '@angular/platform-browser/animations';
-import {providePrimeNG} from 'primeng/config';
-import Aura from '@primeuix/themes/aura';
+import {provideAnimationsAsync} from '@angular/platform-browser/animations/async';
+import {provideOptimus} from '@openng/optimus-ui/config';
+import Aura from '@openng/optimus-ui-themes/aura';
 
 export const appConfig: ApplicationConfig = {
   providers: [
     provideBrowserGlobalErrorListeners(),
     provideZonelessChangeDetection(),
     provideRouter(routes),
-    provideAnimations(),
-    providePrimeNG({
+    provideAnimationsAsync(),
+    provideOptimus({
       theme: {
         preset: Aura
       }

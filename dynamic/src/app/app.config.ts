@@ -2,9 +2,9 @@ import { ApplicationConfig, provideBrowserGlobalErrorListeners, provideZonelessC
 import { provideRouter } from '@angular/router';
 
 import { routes } from './app.routes';
-import {provideAnimations} from '@angular/platform-browser/animations';
-import {providePrimeNG} from 'primeng/config';
-import Aura from '@primeuix/themes/aura';
+import {provideAnimationsAsync} from '@angular/platform-browser/animations/async';
+import {provideOptimus} from '@openng/optimus-ui/config';
+import Aura from '@openng/optimus-ui-themes/aura';
 import {provideHttpClient} from '@angular/common/http';
 
 export const appConfig: ApplicationConfig = {
@@ -12,9 +12,9 @@ export const appConfig: ApplicationConfig = {
     provideBrowserGlobalErrorListeners(),
     provideZonelessChangeDetection(),
     provideRouter(routes),
-    provideAnimations(),
+    provideAnimationsAsync(),
     provideHttpClient(),
-    providePrimeNG({
+    provideOptimus({
       theme: {
         preset: Aura
       }

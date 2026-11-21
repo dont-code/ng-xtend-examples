@@ -6,15 +6,19 @@ This example shows how to **load plugins at runtime** from a remote server using
 
 ## Step 1: Remove static plugin dependencies
 
-Open [`package.json`](https://github.com/dont-code/ng-xtend-examples/blob/main/dynamic/package.json) and compare with the [store example](store.html) — the `xt-plugin-intl`, `xt-plugin-finance`, and `countries-ts` packages are **not** listed here. They will be loaded dynamically instead.
+Open [`package.json`](https://github.com/dont-code/ng-xtend-examples/blob/main/dynamic/package.json) and compare with the [store example](store.html) — the `xt-plugin-intl`, `xt-plugin-finance`, and `world-countries` packages are **not** listed here. They will be loaded dynamically instead.
 
 The dynamic example adds:
 
 ```json
 "dependencies": {
-  "@softarc/native-federation-runtime": "3.3.6",
-  "@angular-architects/native-federation": "20.1.7",
-  "es-module-shims": "2.6.2"
+  "@softarc/native-federation-runtime": "^3.5.6",
+  "es-module-shims": "^2.8.0"
+},
+"devDependencies": {
+  "@angular-architects/native-federation": "22.2.5",
+  "@softarc/native-federation": "^4.10.0",
+  "@softarc/native-federation-orchestrator": "^4.10.0"
 }
 ```
 
@@ -27,17 +31,31 @@ These packages enable Module Federation at the application level, allowing the A
 [`federation.config.js`](https://github.com/dont-code/ng-xtend-examples/blob/main/dynamic/federation.config.js) tells the build system which libraries to share between the host and remote plugins:
 
 ```javascript
-const { withNativeFederation, shareAll } = require('@angular-architects/native-federation/config');
+const { withNativeFederation, fromPackageJson } = require('@angular-architects/native-federation/config');
 
 module.exports = withNativeFederation({
-  shared: {
-    ...shareAll({ singleton: true, strictVersion: true, requiredVersion: 'auto' }),
+  name: 'dynamic-example',
+  shared: fromPackageJson({ singleton: true, strictVersion: true, requiredVersion: 'auto' })
+    .patch(['@angular/animations', '@angular/common', '@angular/core', '@angular/forms', '@angular/platform-browser', '@angular/router', '@openng/optimus-ui'], { includeSecondaries: { keepAll: true } }),
+  features: {
+    ignoreUnusedDeps: true,
+    denseExternals: true
   },
-  skip: ['chart.js/auto', 'primeng/chart', 'primeicons']
+  skip: [
+    'rxjs/ajax',
+    'rxjs/fetch',
+    'rxjs/testing',
+    'rxjs/webSocket',
+    /^@openng\/optimus-ui-/,
+    'chart.js/auto',
+    '@openng/optimus-ui/chart',
+    '@openng/optimus-ui/editor',
+    'primeicons'
+  ]
 });
 ```
 
-`shareAll` ensures that Angular, ng-xtend libraries, and other core dependencies are loaded as **singletons** — the host and plugins share the same instance rather than each bundling their own copy. This is required for plugins to seamlessly integrate into the host's rendering pipeline.
+`fromPackageJson(...).patch(...)` shares the declared runtime dependencies as **singletons** — the host and plugins share the same Angular, ng-xtend, and Optimus UI instances rather than each bundling their own copy. `denseExternals` keeps the generated import map compact. This is required for plugins to seamlessly integrate into the host's rendering pipeline.
 
 ---
 

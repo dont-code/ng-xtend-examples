@@ -1,24 +1,12 @@
-const { withNativeFederation, shareAll,share } = require('@angular-architects/native-federation/config');
+const { withNativeFederation, fromPackageJson } = require('@angular-architects/native-federation/config');
 
 module.exports = withNativeFederation({
-  name:'dynamic-example',
-  shared: {
-    ...shareAll({ singleton: true, strictVersion: true, requiredVersion: 'auto' }),
-    ...share({
-      "@primeuix/themes/aura": {
-        singleton: true,
-        strictVersion: true,
-        requiredVersion: "auto",
-        includeSecondaries: false,
-        build: 'separate',
-        packageInfo: {
-          entryPoint: 'node_modules/@primeuix/themes/dist/aura/index.mjs'
-        }
-      }
-    })
-  },
+  name: 'dynamic-example',
+  shared: fromPackageJson({ singleton: true, strictVersion: true, requiredVersion: 'auto' })
+    .patch(['@angular/animations', '@angular/common', '@angular/core', '@angular/forms', '@angular/platform-browser', '@angular/router', '@openng/optimus-ui'], { includeSecondaries: { keepAll: true } }),
   features: {
-    ignoreUnusedDeps:true
+    ignoreUnusedDeps: true,
+    denseExternals: true
   },
   skip: [
     'rxjs/ajax',
@@ -26,8 +14,10 @@ module.exports = withNativeFederation({
     'rxjs/testing',
     'rxjs/webSocket',
     // Add further packages you don't need at runtime
+    /^@openng\/optimus-ui-/,
     'chart.js/auto',
-    'primeng/chart',
+    '@openng/optimus-ui/chart',
+    '@openng/optimus-ui/editor',
     'primeicons'
   ]
 
